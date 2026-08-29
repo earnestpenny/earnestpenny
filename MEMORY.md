@@ -441,3 +441,132 @@ Books now records wake 20. Python was unavailable in this sandbox, so
 `state/acceptance_pending` and `state/chain_next` request the seven scheduled checks
 and an immediate inspection wake. Broker and wallet remain unarmed; nothing moved
 outbound.
+
+## Wake 21, 2026-08-28
+
+The required post-wake-20 acceptance report was absent, even though the pending and
+chain markers had been consumed. A direct attempt to run all seven checks found the
+Windows `py` launcher but no installed Python; every command returned 112 before any
+product test ran. Wake 20 therefore remains unaccepted. `state/acceptance_pending`
+requests a fresh scheduled run, and the operator outbox records the broken handoff.
+
+At 2026-08-28T18:53:19.0001890-04:00, live A and AAAA queries through 1.1.1.1
+still returned only the Cloudflare SOA record, and HTTPS failed name resolution. The
+season remains unstarted. Source Books records wake 21. Broker and wallet remain
+unarmed; nothing moved.
+
+## Wake 22, 2026-08-28
+
+An operator-staged observation at 19:48 local says the broker boundary is installed,
+with live Telegram acceptance still pending. Treat installation and live delivery as
+separate facts. The runner's new state reset its counter to 1 even though the
+persistent record is at wake 22. Its automatically queued daily Telegram proposal
+therefore carries the wrong wake number and an inaccurate no-attention-needed line.
+It was not edited. A separate expiring broker proposal reports the discrepancy and
+asks the operator to inspect the runner and broker handoff.
+
+No fresh acceptance report was staged for the second consecutive wake.
+`state/acceptance_pending` remains the gate, and `state/chain_next` requests an
+immediate read of any broker decision or acceptance result. At
+2026-08-28T19:48:59.4012831-04:00 the domain still returned only Cloudflare's SOA
+record and HTTPS did not resolve. The season remains unstarted. Books source records
+wake 22. No wallet or money movement was observed.
+
+## Wake 23, 2026-08-28
+
+No acceptance report or broker decision was staged. All seven direct acceptance
+commands exited 112 because the Windows launcher found no installed Python. This is
+the third consecutive wake without the required report. `state/acceptance_pending`
+remains, and Books source records wake 23 without an accepted rebuild.
+
+The runner log proves the wake 22 corrective note was refused because its envelope
+was not closed. The three legacy social proposals were refused for the same reason.
+A replacement `census-broker-proposal/1` note now reports the persistent wake 23
+versus private wake 2 mismatch, acceptance failure, and unresolved domain. Treat it
+as proposed only until a broker decision and live Telegram result are staged.
+
+At 2026-08-28T20:16:44.3366128-04:00 the domain still returned only Cloudflare's SOA
+record, and HTTPS failed name resolution. The season remains unstarted. No wallet or
+money movement was observed.
+
+## Wake 24, 2026-08-28
+
+The season started at 2026-08-28T21:50:43.0868650-04:00, the first successful public
+load observed first-hand by a wake. A live 1.1.1.1 query returned two A and two AAAA
+answers for earnestpenny.com. The home page returned HTTPS 200 with the title `Home |
+Earnest Penny`, and public `/books.json` returned HTTPS 200. The earlier staged
+publication report recorded a successful bootstrap at 21:49:53 local, but the adopted
+season rule uses the wake's first-hand load.
+
+The public Books artifact still records wake 20. Source Books records wake 24. No
+new seven-check acceptance report was staged, and Python remains unavailable in the
+wake sandbox, so `state/acceptance_pending` remains. Publication of the reconciled
+source must go through a new broker proposal after acceptance. Broker installation is
+still distinct from live Telegram delivery, which remains unverified.
+
+Proposal `wake-24-launch-note` is a closed-envelope Telegram note reporting the
+verified launch and the remaining publication gate. Treat it as proposed only until a
+broker decision and delivery evidence are staged. No wallet or money movement was
+observed.
+
+## Wake 25, 2026-08-28
+
+At 2026-08-28T22:15:24.2058737-04:00, earnestpenny.com still resolved through
+1.1.1.1 and returned HTTPS 200 for both the home page and `/books.json`. The public
+Books artifact still records wake 20; source Books records wake 25.
+
+No acceptance report or broker decision was staged. Direct acceptance remained
+impossible because this workspace had no installed Python; `py -3.12 --version`
+exited 112. `state/acceptance_pending` remains. Publication must not be proposed
+until all seven checks pass and the rebuilt artifacts are inspected. Broker
+installation remains operator-attested, while live Telegram delivery remains
+unverified. No wallet or money movement was observed.
+
+## Wake 26, 2026-08-28
+
+At 2026-08-28T22:24:38.7408457-04:00, earnestpenny.com resolved through 1.1.1.1
+and returned HTTPS 200 for the home page and `/books.json`. Public Books still
+recorded wake 20. Source Books now records wake 26.
+
+The missing-interpreter gate was resolved locally with the official Python 3.12.10
+embeddable package after its published MD5 matched. The first acceptance run exposed
+a Windows temporary-path canonicalization defect in the site self-test. The fixture
+now resolves its expected output path, and missing paths are named on failure. After
+that repair all seven checks passed first-hand. The final source build contains 38
+files, Books wake 26, journals through wake 26, and exact Sol author labels.
+
+`state/acceptance_pending` is cleared. Proposal `wake-26-publish` asks the broker to
+publish the accepted build. It remains only a proposal until a broker decision and a
+fresh public read prove publication. Broker installation remains operator-attested;
+live Telegram delivery remains unverified. No wallet or money movement was observed.
+
+## Wake 27, 2026-08-28
+
+At 23:43 local the public home, Review, and Books endpoints returned HTTPS 200, but
+public Books still recorded wake 20 and Review still said booking was closed. The
+Polar checkout was verified customer-side: Wallet Launch Review, $99 total, enabled
+Pay now action, required venture URL, evidence URL, and review notes, plus the report
+privacy choice. No charge was attempted. Dashboard approval and mail routing remain
+operator-staged, not first-hand wake observations.
+
+The accepted source now links that checkout from Review and promises no delivery
+time. All seven acceptance checks passed first-hand. The build has 39 files and Books
+wake 27. Closed proposal `wake-27-publish-booking` asks the broker to publish the exact
+manifest. Treat it as proposed until a decision and fresh public read prove it. Do not
+contact the staged leads until the public Review page exposes the checkout. No wallet,
+payment, customer, order, or Telegram delivery was observed.
+
+## Wake 28, 2026-08-28
+
+At 2026-08-28T23:54:24.4411033-04:00, the public home, Review, and Books endpoints
+returned HTTPS 200. Public Books still recorded wake 20, and Review still said booking
+was closed. No broker decision was staged for `wake-27-publish-booking`, so publication
+was not proved and no duplicate proposal was created.
+
+A staged operator report describes an owner-funded live checkout test, not a customer
+sale, and says Polar preserved no custom-field values in the order record. This wake
+could not inspect the Polar account or receipt first-hand. No amount from that report
+was entered in Books, no customer revenue was claimed, and no refund was proposed.
+Do not rely on Polar custom-field capture until a real order proves it. Source Books
+records wake 28. All seven acceptance checks passed first-hand, and the rebuilt site
+contains 40 pages. No wallet or customer payment was observed first-hand.

@@ -34,6 +34,7 @@ import tempfile
 import time
 import urllib.parse
 import urllib.request
+import zipfile
 from pathlib import Path
 
 AGENT = Path(__file__).resolve().parents[1]
@@ -49,12 +50,24 @@ CHAIN_CAP = 4          # max wakes per tick
 HEARTBEAT_HOURS = 2    # guaranteed cadence even with an empty inbox
 DAILY_TELEGRAM_HOUR = 9
 BROKER_PROPOSAL_SCHEMA = "census-broker-proposal/1"
-BROKER_POLICY_VERSION = "2026-08-28.1"
+BROKER_POLICY_VERSION = "2026-08-28.2"
 BROKER_PROPOSAL_KEYS = frozenset({
     "schema", "proposal_id", "wake_id", "author_model", "policy_version",
     "action_type", "created_at", "expires_at", "nonce", "payload",
     "payload_hash",
 })
+PUBLICATION_FILE_LIMIT = 2 * 1024 * 1024
+PUBLICATION_TOTAL_LIMIT = 32 * 1024 * 1024
+PUBLICATION_WORK_FILES = (
+    "CHARTER.md", "THESIS.md", "VOICE.md", "MEMORY.md",
+    "books/books.json", "books/ledger.jsonl", "books/treasury.json",
+    "census/census.json", "census/MATRIX_FORMAT.md",
+    "schema/oab-0.1.schema.json",
+)
+PUBLICATION_AUTHORITY_FILES = (
+    "BACKENDS.json", "WAKE_PROMPT.md", "tools/wake.py",
+    "tools/adapters/codex_exec.py",
+)
 
 
 def runtime_limits(broker_mode):
@@ -64,6 +77,104 @@ def runtime_limits(broker_mode):
         # must fit inside the installed task's 20-minute execution limit.
         return 1, 420
     return CHAIN_CAP, 900
+
+
+def _publication_file_bytes(root, relative):
+    root = Path(root).resolve()
+    relative = Path(relative)
+    path = root / relative
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError("publication path escapes its root")
+    current = root
+    for part in relative.parts[:-1]:
+        current = current / part
+        opened = current.lstat()
+        reparse = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+        if current.is_symlink() or \
+                getattr(opened, "st_file_attributes", 0) & reparse or \
+                not stat.S_ISDIR(opened.st_mode):
+            raise ValueError("publication parent is linked or not a directory")
+    before = path.lstat()
+    reparse = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+    if path.is_symlink() or \
+            getattr(before, "st_file_attributes", 0) & reparse or \
+            not stat.S_ISREG(before.st_mode) or before.st_nlink != 1 or \
+            before.st_size > PUBLICATION_FILE_LIMIT:
+        raise ValueError("publication source is linked, irregular, or oversized")
+    raw = path.read_bytes()
+    after = path.lstat()
+    if len(raw) != before.st_size or \
+            (before.st_dev, before.st_ino, before.st_size) != \
+            (after.st_dev, after.st_ino, after.st_size):
+        raise ValueError("publication source changed during read")
+    return raw
+
+
+def _publication_paths(agent_root, authority_root):
+    selected = {}
+    agent_root = Path(agent_root)
+    authority_root = Path(authority_root)
+    for relative in PUBLICATION_WORK_FILES:
+        if (agent_root / relative).is_file():
+            selected[relative] = (agent_root, relative)
+    if (agent_root / "actions.log").is_file():
+        selected["actions.log"] = (agent_root, "actions.log")
+    for pattern in (
+            "census/matrices/*.json", "journal/*.md", "site/dist/**/*"):
+        for path in agent_root.glob(pattern):
+            if path.is_file():
+                relative = path.relative_to(agent_root).as_posix()
+                selected[relative] = (agent_root, relative)
+    for relative in PUBLICATION_AUTHORITY_FILES:
+        if (authority_root / relative).is_file():
+            selected[relative] = (authority_root, relative)
+    return sorted(selected.items())
+
+
+def build_publication_bundle(agent_root, authority_root, bundle_path,
+                             *, source_commit):
+    """Create the immutable public handoff that the broker independently checks."""
+    if re.fullmatch(r"[0-9a-f]{40}", source_commit) is None:
+        raise ValueError("publication source commit is invalid")
+    bundle_path = Path(bundle_path)
+    files = []
+    total = 0
+    for relative, (root, source_relative) in _publication_paths(
+            agent_root, authority_root):
+        raw = _publication_file_bytes(root, source_relative)
+        total += len(raw)
+        if total > PUBLICATION_TOTAL_LIMIT:
+            raise ValueError("publication bundle is oversized")
+        files.append((relative, raw))
+    records = [
+        {"path": relative, "bytes": len(raw),
+         "sha256": hashlib.sha256(raw).hexdigest()}
+        for relative, raw in files
+    ]
+    manifest = (json.dumps({
+        "schema": "census-publication-manifest/2",
+        "source_commit": source_commit,
+        "files": records,
+    }, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+    bundle_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = bundle_path.with_name(
+        bundle_path.name + "." + secrets.token_hex(8) + ".tmp")
+    try:
+        with zipfile.ZipFile(temporary, "w", compression=zipfile.ZIP_DEFLATED,
+                             compresslevel=9) as archive:
+            for relative, raw in files + [("PUBLICATION-MANIFEST.json", manifest)]:
+                info = zipfile.ZipInfo(relative, date_time=(1980, 1, 1, 0, 0, 0))
+                info.compress_type = zipfile.ZIP_DEFLATED
+                info.external_attr = (stat.S_IFREG | 0o600) << 16
+                archive.writestr(info, raw)
+        os.replace(temporary, bundle_path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return {
+        "manifest_sha256": hashlib.sha256(manifest).hexdigest(),
+        "bundle_sha256": hashlib.sha256(bundle_path.read_bytes()).hexdigest(),
+        "file_count": len(files),
+    }
 
 def now_iso():
     return dt.datetime.now().astimezone().isoformat(timespec="seconds")
@@ -385,6 +496,83 @@ def ensure_daily_broker_proposal(state, wake_n, author_model, today=None,
     log_line({"t": now_iso(), "event": "daily_telegram_proposal_error",
               "err": "daily proposal namespace exhausted"})
     return False
+
+
+def ensure_publication_proposal(state, wake_n, author_model, *, source_commit,
+                                current=None):
+    """Stage one immutable public bundle and its broker proposal after a wake."""
+    current = (current or dt.datetime.now().astimezone()).astimezone()
+    proposals = AGENT / "proposals"
+    proposals.mkdir(parents=True, exist_ok=True)
+    state_dir = AGENT / "state"
+    state_dir.mkdir(parents=True, exist_ok=True)
+    temporary = state_dir / (
+        f"publication-wake-{wake_n:04d}-{secrets.token_hex(8)}.zip")
+    try:
+        result = build_publication_bundle(
+            AGENT, AUTHORITY, temporary, source_commit=source_commit)
+        bundle_name = result["bundle_sha256"] + ".zip"
+        bundle_target = BROKER_INBOX / bundle_name
+        _validate_direct_directory(BROKER_SUBMIT)
+        _validate_direct_directory(BROKER_INBOX)
+        if BROKER_SUBMIT.stat().st_dev != BROKER_INBOX.stat().st_dev:
+            raise ValueError("publication submit and inbox are not atomic")
+        if not bundle_target.exists():
+            _atomic_stage(temporary.read_bytes(), BROKER_SUBMIT, bundle_target)
+        payload = {
+            "repo": "earnestpenny/earnestpenny",
+            "remote": "https://github.com/earnestpenny/earnestpenny.git",
+            "branch": "main",
+            "manifest_hash": result["manifest_sha256"],
+            "bundle_sha256": result["bundle_sha256"],
+            "commit_message": f"Publish wake {wake_n}",
+        }
+        proposal = {
+            "schema": BROKER_PROPOSAL_SCHEMA,
+            "proposal_id": (
+                f"publish-wake-{wake_n:04d}-{result['manifest_sha256'][:12]}"),
+            "wake_id": f"wake_{wake_n:04d}",
+            "author_model": author_model,
+            "policy_version": BROKER_POLICY_VERSION,
+            "action_type": "git_publish",
+            "created_at": current.isoformat(timespec="seconds"),
+            "expires_at": (current + dt.timedelta(minutes=120)).isoformat(
+                timespec="seconds"),
+            "nonce": secrets.token_hex(32),
+            "payload": payload,
+            "payload_hash": _canonical_hash(payload),
+        }
+        raw = (json.dumps(proposal, indent=2, ensure_ascii=False) + "\n").encode(
+            "utf-8")
+        target = proposals / f"publication-wake-{wake_n:04d}.json"
+        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0)
+        fd = os.open(target, flags, 0o600)
+        try:
+            os.write(fd, raw)
+            os.fsync(fd)
+        finally:
+            os.close(fd)
+        state["last_publication_proposal_wake"] = wake_n
+        state["last_publication_manifest_sha256"] = result["manifest_sha256"]
+        log_line({"t": now_iso(), "event": "publication_proposed",
+                  "wake": wake_n, "bundle": bundle_name,
+                  "files": result["file_count"]})
+        return True
+    except (OSError, ValueError) as exc:
+        log_line({"t": now_iso(), "event": "publication_proposal_error",
+                  "wake": wake_n, "err": str(exc)})
+        return False
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def authority_source_commit():
+    raw = _read_direct_regular(
+        AUTHORITY / "SOURCE_COMMIT", AUTHORITY, max_bytes=128)
+    value = raw.decode("ascii").strip()
+    if re.fullmatch(r"[0-9a-f]{40}", value) is None:
+        raise ValueError("authority source commit is invalid")
+    return value
 
 def git_commit(wake_n, backend_id):
     root = AGENT.parents[1]
@@ -790,6 +978,14 @@ def one_wake(state, prefer_cheap_quota):
             if BROKER_MODE:
                 ensure_daily_broker_proposal(
                     state, wake_n, author_model=b["model"])
+                try:
+                    ensure_publication_proposal(
+                        state, wake_n, author_model=b["model"],
+                        source_commit=authority_source_commit())
+                except (OSError, UnicodeDecodeError, ValueError) as exc:
+                    log_line({"t": now_iso(),
+                              "event": "publication_proposal_error",
+                              "wake": wake_n, "err": str(exc)})
                 stage_broker_proposals()
                 save_json(STATE_FILE, state)
             else:
