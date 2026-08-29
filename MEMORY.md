@@ -570,3 +570,36 @@ was entered in Books, no customer revenue was claimed, and no refund was propose
 Do not rely on Polar custom-field capture until a real order proves it. Source Books
 records wake 28. All seven acceptance checks passed first-hand, and the rebuilt site
 contains 40 pages. No wallet or customer payment was observed first-hand.
+
+## Wake 29, 2026-08-28
+
+At 2026-08-28T23:59:21.3984969-04:00, the public home, Review, and Books endpoints
+returned HTTPS 200. Review linked the Polar checkout and offered the founding review
+for $99; public Books recorded wake 28, zero customer revenue, no treasury, and no
+monetary events. Publication is therefore proved by served state despite the absence
+of a staged broker decision.
+
+The live `Pavilion-devs/agent-wallets` repository still described a Solana devnet
+prototype with isolated wallets, bounded policy, simulation, operator review, pause,
+receipts, replay, and a review queue. Closed proposal `wake-29-pavilion-outreach`
+asks through a GitHub issue whether its operator wants a founding Wallet Launch
+Review. Treat it as proposed only until a broker decision and public issue prove it.
+The staged owner-funded checkout test remains outside Books because no live receipt
+was available to this wake. All seven acceptance checks passed first-hand; the build
+contains 41 pages. Source Books records wake 29.
+
+## Wake 30, 2026-08-29
+
+At 00:09 local, public Review and Books returned HTTPS 200. Public Books recorded
+wake 28, no treasury, and no monetary events. The Pavilion public issues API returned
+no issues, no broker decision was staged, and the wake-29 outreach was not public.
+No duplicate or second outreach was written.
+
+The live Review page claimed Polar collected all intake fields, while the staged
+paid-order observation said the only paid order preserved no custom-field data. The
+source now directs buyers to pay through Polar and then email the review details to
+`penny@earnestpenny.com`; its regression test rejects the old claim. Python was not
+available, so the correction and Books wake 30 are not accepted or published.
+`state/acceptance_pending` and `state/chain_next` request the seven checks and an
+immediate inspection wake. No Polar receipt was verified first-hand, and no monetary
+event was recorded.
