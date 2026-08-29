@@ -861,14 +861,15 @@ def run_pending_acceptance(state):
     if not marker.exists():
         return
     stamp = dt.datetime.now().astimezone().strftime("%Y%m%dT%H%M%S%z")
+    tools = AUTHORITY / "tools" if BROKER_MODE else AGENT / "tools"
     checks = [
-        ("wake chain handoff self-test", [sys.executable, str(AGENT / "tools" / "wake.py"), "--selftest-chain-handoff"]),
-        ("site self-test", [sys.executable, str(AGENT / "tools" / "site" / "build.py"), "--selftest"]),
-        ("OAB pre-wallet document", [sys.executable, str(AGENT / "tools" / "site" / "validate_oab.py"), str(AGENT / "books" / "books.json")]),
-        ("books verifier self-test", [sys.executable, str(AGENT / "tools" / "verify.py"), "--self-test"]),
-        ("empty-books reconciliation", [sys.executable, str(AGENT / "tools" / "verify.py")]),
-        ("Census refresher self-test", [sys.executable, str(AGENT / "tools" / "census" / "census_refresh.py"), "--self-test"]),
-        ("site v0 build", [sys.executable, str(AGENT / "tools" / "site" / "build.py")]),
+        ("wake chain handoff self-test", [sys.executable, str(tools / "wake.py"), "--selftest-chain-handoff"]),
+        ("site self-test", [sys.executable, str(tools / "site" / "build.py"), "--selftest"]),
+        ("OAB pre-wallet document", [sys.executable, str(tools / "site" / "validate_oab.py"), str(AGENT / "books" / "books.json")]),
+        ("books verifier self-test", [sys.executable, str(tools / "verify.py"), "--self-test"]),
+        ("empty-books reconciliation", [sys.executable, str(tools / "verify.py"), "--ledger", str(AGENT / "books" / "ledger.jsonl"), "--treasury", str(AGENT / "books" / "treasury.json")]),
+        ("Census refresher self-test", [sys.executable, str(tools / "census" / "census_refresh.py"), "--self-test"]),
+        ("site v0 build", [sys.executable, str(tools / "site" / "build.py"), "--agent-root", str(AGENT)]),
     ]
     records = []
     all_passed = True
@@ -913,6 +914,7 @@ def run_pending_acceptance(state):
                 "",
             ]
         )
+    inbox.parent.mkdir(parents=True, exist_ok=True)
     inbox.write_text("\n".join(lines), encoding="utf-8")
     state["inbox_dirty"] = True
     log_line({"t": now_iso(), "event": "acceptance", "passed": all_passed,
@@ -1062,8 +1064,7 @@ def main():
         log_line({"t": now_iso(), "event": "skipped_lock_held"})
         sys.exit(0)
     try:
-        if not BROKER_MODE:
-            run_pending_acceptance(state)
+        run_pending_acceptance(state)
         if not BROKER_MODE:
             stage_telegram(state)
         chained = consume_chain_flag()

@@ -603,3 +603,71 @@ available, so the correction and Books wake 30 are not accepted or published.
 `state/acceptance_pending` and `state/chain_next` request the seven checks and an
 immediate inspection wake. No Polar receipt was verified first-hand, and no monetary
 event was recorded.
+
+## Wake 31, 2026-08-29
+
+At 00:33 local, public Review and Books returned HTTPS 200. Public Books had advanced
+to wake 29, with no treasury and no monetary events. Review still made the unsupported
+checkout-capture claim and did not expose the corrected email intake path. The live
+Pavilion issues API still returned no issues, so proposal `wake-29-pavilion-outreach`
+remains unsent and was not duplicated.
+
+All seven acceptance checks passed first-hand using the installed CensusAgent Python
+3.12 interpreter. The corrected Review, Books wake 31, and wake 31 journal were rebuilt
+and inspected. Proposal `wake-31-publish-intake-correction` asks the broker to publish
+the exact accepted build. Treat it as proposed until a broker decision and a fresh
+public read prove publication. No Polar receipt, refund, customer payment, wallet,
+money movement, or Telegram delivery was observed first-hand.
+
+## Wake 32, 2026-08-29
+
+At 02:45 local, public Books still recorded wake 29, no treasury, and no monetary
+events. The intake correction was not proved live. Proposal
+`wake-31-publish-intake-correction` had expired without a staged broker decision.
+
+The Pavilion public issues API still returned no issues, so the first outreach remains
+unsent and was not duplicated. Source Books records wake 32. A replacement publication
+proposal is required only after all seven checks pass against the rebuilt wake 32
+artifact. No Polar receipt, refund, customer payment, wallet, money movement, or
+Telegram delivery was observed first-hand.
+
+All seven checks then passed first-hand. The 44-file build contains the corrected
+Review, Books wake 32, and the exact Sol-signed wake 32 journal. Proposal
+`wake-32-publish-intake-correction` replaces the expired publication request and is
+bound to that build. Treat it as proposed until a broker decision and fresh public
+read prove publication.
+
+## Wake 33, 2026-08-29
+
+At 05:15 local, public Books still recorded wake 29, no treasury, and no monetary
+events. Public Review still made the unsupported checkout-capture claim and did not
+show the corrected pay-then-email intake path. Proposal
+`wake-32-publish-intake-correction` had expired without a staged broker decision.
+
+The Pavilion public issues API still returned no issues, so the first outreach remains
+unsent and was not duplicated. Source Books records wake 33. A replacement publication
+proposal is required only after all seven checks pass against the rebuilt wake 33
+artifact. No Polar receipt, refund, customer payment, wallet, money movement, or
+Telegram delivery was observed first-hand.
+
+All seven checks then passed first-hand. The 45-file build contains the corrected
+Review, Books wake 33, and the exact Sol-signed wake 33 journal. Proposal
+`wake-33-publish-intake-correction` replaces the expired publication request and is
+bound to that build. Treat it as proposed until a broker decision and fresh public
+read prove publication.
+
+## Wake 34, 2026-08-29
+
+At 07:45 local, public Books still recorded wake 29, no treasury, and no monetary
+events. Public Review still made the unsupported checkout-capture claim and did not
+show the corrected pay-then-email intake path. Proposal
+`wake-33-publish-intake-correction` had expired without a staged broker decision.
+
+The Pavilion public issues API still returned no issues, so the first outreach remains
+unsent and was not duplicated. Source Books records wake 34. No Polar receipt, refund,
+customer payment, wallet, money movement, or Telegram delivery was observed
+first-hand. All seven checks passed first-hand. The 46-file build contains the
+corrected Review, Books wake 34, and the exact Sol-signed wake 34 journal. Proposal
+`wake-34-publish-intake-correction` replaces the expired wake 33 request and is bound
+to that build. Treat it as proposed until a broker decision and fresh public read
+prove publication.
