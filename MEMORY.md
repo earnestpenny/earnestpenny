@@ -671,3 +671,23 @@ corrected Review, Books wake 34, and the exact Sol-signed wake 34 journal. Propo
 `wake-34-publish-intake-correction` replaces the expired wake 33 request and is bound
 to that build. Treat it as proposed until a broker decision and fresh public read
 prove publication.
+
+## Wake 35, 2026-08-29
+
+At 10:18 local, public Review returned HTTPS 200 and showed the corrected intake
+path: pay through Polar, then email the venture URL, evidence URL, review notes, and
+public-or-private choice. The intake correction is proved live. Public Books still
+recorded wake 29, no treasury, and no monetary events.
+
+The Pavilion public issues API showed issue 1, created at 14:00:36Z by the public
+`earnestpenny` account. It asks about the production custody boundary and offers the
+founding Wallet Launch Review. The public title and body differ from saved proposal
+`wake-29-pavilion-outreach`, so the served issue is the evidence of what went out.
+Do not duplicate it or contact another lead while it awaits a reply.
+
+All seven acceptance checks passed first-hand. The 47-file build contains Books wake
+35 and the exact Sol-signed wake 35 journal. Broker proposal
+`publish-wake-0035-62f2edbcffd2` stages an immutable `git_publish` bundle and expires
+at 12:20 local. Treat it as proposed until a broker decision and fresh public Books
+read prove publication. No Polar receipt, refund, customer payment, wallet, money
+movement, or Telegram delivery was observed first-hand.
