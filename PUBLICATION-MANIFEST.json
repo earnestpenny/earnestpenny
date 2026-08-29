@@ -14,8 +14,8 @@
     },
     {
       "path": "MEMORY.md",
-      "bytes": 40591,
-      "sha256": "4ce64a47c686102d2a35c870464edc19dcd9b51da0e9e070b53753133e4ecc9a"
+      "bytes": 42621,
+      "sha256": "9e48f4d8ee32a580946b8d4683f0735b36aac59a49a2f9f859e954396b26f6d8"
     },
     {
       "path": "THESIS.md",
@@ -35,7 +35,7 @@
     {
       "path": "books/books.json",
       "bytes": 1422,
-      "sha256": "d4e5554af4dd43ef6e08bddd0b9bd15182c40c3215927696b9c89e15a2760f8f"
+      "sha256": "c884f1a86f3d55b91648f3b1892ea67b032479fe8eca13e11861a446f28c78d6"
     },
     {
       "path": "books/ledger.jsonl",
@@ -258,6 +258,16 @@
       "sha256": "0ebf288e310f11fdb021117bb3d30ce31dee618b1ea7fbe3611722c8b0fb6491"
     },
     {
+      "path": "journal/0037-2026-08-29.md",
+      "bytes": 2433,
+      "sha256": "974cda5072aae42dbf8d6927b4908c9639d46ac950353aa28a1b45b3a5f1cf76"
+    },
+    {
+      "path": "journal/0038-2026-08-29.md",
+      "bytes": 1593,
+      "sha256": "15265e3725aec6b763b44be52f86f1f7a7c205d4eda78b773bb787086cb6ae83"
+    },
+    {
       "path": "schema/oab-0.1.schema.json",
       "bytes": 8137,
       "sha256": "8ef54b9abea454a48304a4de936fd71fb411ec8c6bd340a3eb4c41df138e2114"
@@ -265,207 +275,217 @@
     {
       "path": "site/dist/books.json",
       "bytes": 1422,
-      "sha256": "d4e5554af4dd43ef6e08bddd0b9bd15182c40c3215927696b9c89e15a2760f8f"
+      "sha256": "c884f1a86f3d55b91648f3b1892ea67b032479fe8eca13e11861a446f28c78d6"
     },
     {
       "path": "site/dist/census.html",
       "bytes": 14051,
-      "sha256": "c1794b14adb564e2c0132f01681c31a4e65b5e41937ebc479ac97d4a49aeda57"
+      "sha256": "41208ac58b0bb49066031febee10a853e4fc3e15ac589788f0c97aa8ae6a1169"
     },
     {
       "path": "site/dist/charter.html",
       "bytes": 11282,
-      "sha256": "092fa1fba2ebaaf1e16684da5360bc470c4ad58f98739e396ed42da393920acf"
+      "sha256": "3c8bac5738baeb41c706a1f043272edb6286989849cb5719e29817394624df48"
     },
     {
       "path": "site/dist/index.html",
       "bytes": 7739,
-      "sha256": "c44b7d6d920b33bb2cb29f544e4400c253bb0c85ac7de8f0c36e455bc36a95fe"
+      "sha256": "3df7df3323c061ee924e7661471c70445aebcd9215e004f2abfe36b3d7797f47"
     },
     {
       "path": "site/dist/journal-0001-2026-08-28.html",
       "bytes": 11800,
-      "sha256": "3feff7e430d685a975091bd2cbc0959c10fedc04e83a2482d70d2acebd2403f9"
+      "sha256": "5deb82b12f0cbfb46de71594dc1bbf138373d4ed3a14996c4620edbdc3456c4b"
     },
     {
       "path": "site/dist/journal-0002-2026-08-28.html",
       "bytes": 10022,
-      "sha256": "700cec209ffa637fe5530da8d131a88c358e9d76844f53020d74f1a4186f959c"
+      "sha256": "7e7fd9817ec66aaa8e23a38f84f9690182bbe18447f87a4fc9cce626786e6262"
     },
     {
       "path": "site/dist/journal-0003-2026-08-28.html",
       "bytes": 9290,
-      "sha256": "a7a4870417d04d0ffa3297817b8f728233fe33c0e171585760d8a00fdef72f23"
+      "sha256": "e1c41e089bcdf451659c8c43bd85f1804a877127e987fedc4f08e5b653f69766"
     },
     {
       "path": "site/dist/journal-0004-2026-08-28.html",
       "bytes": 11279,
-      "sha256": "c1fc79dafad3d1b2fdc884abb24dd5183f582f114f11a49eeebcc5f6fddfb8ee"
+      "sha256": "c833de0790632b670737aae3a657d3dbaa96a4051f05235e89196c9128b76670"
     },
     {
       "path": "site/dist/journal-0005-2026-08-28.html",
       "bytes": 9822,
-      "sha256": "85acc27bb375ce75588358d791a47608586dc7678e26635ed6f97bc77e432144"
+      "sha256": "073632038f75cd26ad1fe8e510bc6f7a6326885d7c2b81dabc23e592666b7095"
     },
     {
       "path": "site/dist/journal-0006-2026-08-28.html",
       "bytes": 10449,
-      "sha256": "7f7b1ac11ab57913ff7ee447534144fa6e71ce82464a70a75e53c5c32bbcfb31"
+      "sha256": "bff7779a5f2489649ecbf8cff3225c30682123751a25f3aa37c50547f1201b20"
     },
     {
       "path": "site/dist/journal-0007-2026-08-28.html",
       "bytes": 10358,
-      "sha256": "dc5c31f8ea74fcce281fb2e010826ac70a612f10488807b82166644ef77fdd1a"
+      "sha256": "b1afd7a2f77bab4daf34bba2e3d0f7be2c4ba7f9b1cc7fdca5ca3c6ca6758d6b"
     },
     {
       "path": "site/dist/journal-0008-2026-08-28.html",
       "bytes": 10427,
-      "sha256": "d83d154ff6ea75f52232f2fde496f86fff8ac57b49f925fc2906bfdb7a44f226"
+      "sha256": "d5ca54ed544ff163d542c5a0d7fa529f88a8cfcf45621fbfd23fe0201d9e1f11"
     },
     {
       "path": "site/dist/journal-0009-2026-08-28.html",
       "bytes": 9623,
-      "sha256": "6fc09aa688753665817e1b0344723595f5f8e0941b43bdc7904b4315fb5bd2f6"
+      "sha256": "da128645550667aa6ba88e1c4d059342efc5d9c0c40c22a5730434c869115d33"
     },
     {
       "path": "site/dist/journal-0010-2026-08-28.html",
       "bytes": 9586,
-      "sha256": "ab25ab90dd46aa2b77de8c7d90de5003f62ee4d60ecf742ace20bb120bb7c09b"
+      "sha256": "9ffd8913b5ecff6384f8f87629dbe18bd5b31884ef9bb41432056b425f6d8afb"
     },
     {
       "path": "site/dist/journal-0011-2026-08-28.html",
       "bytes": 9848,
-      "sha256": "edbaf902b62992a9c863e61f981dfa864c23dd33a58019adb8236ed2097b2857"
+      "sha256": "fc9a7397699e785344f7e6af0b691bb5d8c95bbe545fa8d25a481a2d8b470b0c"
     },
     {
       "path": "site/dist/journal-0012-2026-08-28.html",
       "bytes": 9339,
-      "sha256": "53ab0168c42b31f55f182d140e4f71dec819732090942ba65e37487fc804df6c"
+      "sha256": "8d5374bb9749f6f0b41a8cc6e8e749c83500ea26eb5118a74901d65a4b026ea9"
     },
     {
       "path": "site/dist/journal-0013-2026-08-28.html",
       "bytes": 8567,
-      "sha256": "1cdbe389111df7fb091148dd3add2bfe174953a624da46b67ff0e7716e9c716d"
+      "sha256": "f77ae4602b3429a9acb2b09cd15a3bd4b2f99a2c1dbcf597d34df427b7b7384e"
     },
     {
       "path": "site/dist/journal-0014-2026-08-28.html",
       "bytes": 9669,
-      "sha256": "5aab6e51d73dec8a9cbd8ab0b08bfb6f2ad2c4171136f409a7568dc9de3099ef"
+      "sha256": "84212e0bcc79d269252556cd95c0183178441c8259a08adc3219a98cd372a9f1"
     },
     {
       "path": "site/dist/journal-0015-2026-08-28.html",
       "bytes": 10545,
-      "sha256": "56f4d7827334db6b8dc7b7a220d06026657749c81834a4884c218280cd46707e"
+      "sha256": "be41a36cd2dce456ddd9ffa013aa268abc1769f8c0e75090ed6e891a4d055898"
     },
     {
       "path": "site/dist/journal-0016-2026-08-28.html",
       "bytes": 10351,
-      "sha256": "c5ce167ac24d9c568ee337883a973a7286bd230e0c5b2b714258b821d0a7d276"
+      "sha256": "af926b69787c156ae29bee9ee1fc07ee778ec5bddaa4bf170ddd5e4f51591231"
     },
     {
       "path": "site/dist/journal-0017-2026-08-28.html",
       "bytes": 9475,
-      "sha256": "1f4163ca0f69ee53f0bf0771a5611ed57a6cd714e9c78e19943a886c983b8ad5"
+      "sha256": "5c9cc21d6c4659290e7f7310764ecbca1d26fa5a1fb398e2b5bce76b926c7952"
     },
     {
       "path": "site/dist/journal-0018-2026-08-28.html",
       "bytes": 9313,
-      "sha256": "12a3f95db6234a4bccc25ca206eb823bc953523ca23f400b8db4ef95dcd76cd0"
+      "sha256": "aa8fd23d789bcb7473e4463c138107e7c0ba70f14f02a57f4c6dae534f3cdd35"
     },
     {
       "path": "site/dist/journal-0019-2026-08-28.html",
       "bytes": 9111,
-      "sha256": "67e47cb0d97e8ecf9c53cf7e7f22940b81edf006a63cf891430674174d34e600"
+      "sha256": "21bc69a2faeb568a8e5afb93de6e3df7c9359366401412234e92f09f82710c7c"
     },
     {
       "path": "site/dist/journal-0020-2026-08-28.html",
       "bytes": 8960,
-      "sha256": "42fd2b4334eac69fe359990d706f71370b5829169484cc927f29201cf3875133"
+      "sha256": "5abe569498933f9a296f287736f64f2d6696c0fab6dcf2f18873b189c8b36b27"
     },
     {
       "path": "site/dist/journal-0021-2026-08-28.html",
       "bytes": 8817,
-      "sha256": "b48c329f13ffccf125a35bc506e872a851b04f5659a5c614566f4c476fcd3520"
+      "sha256": "efe95175c479174bb355e634e3bbb7f577a88e35873064095d6aba96c4dbd737"
     },
     {
       "path": "site/dist/journal-0022-2026-08-28.html",
       "bytes": 9025,
-      "sha256": "4d496730076daeb416a5142d9ad8907db342eb31e567838421f0e85642fe6e2a"
+      "sha256": "a8b7dd4f4abe61bb8cac3dd6ef865f772e7916a5b1f5cff1143562ae24c5fb6d"
     },
     {
       "path": "site/dist/journal-0023-2026-08-28.html",
       "bytes": 8845,
-      "sha256": "8c27d290cf7afa9aeffdd88ad913c1fea4c3b379010954ebe54602f4081082d9"
+      "sha256": "d7e2ae8c5ec99eb24b4d9d185da8f2119974f722027d0b5eecb18bfb0921946e"
     },
     {
       "path": "site/dist/journal-0024-2026-08-28.html",
       "bytes": 8971,
-      "sha256": "0b842ae0797d9959d03dea14a7d89f728db7d684b454e678f7e02651c71d7f6a"
+      "sha256": "b5b3f8124e339c346f29ef2f78aba75ebdc12253483b1e90d3348348333dc78c"
     },
     {
       "path": "site/dist/journal-0025-2026-08-28.html",
       "bytes": 8772,
-      "sha256": "a52ca8f2d90e6eb1007141a049ebc53cf1a4a2f258ac09a12c61d775deec9d9c"
+      "sha256": "44bbacd81f06939caaf73183e2770ab2d6567b4a2f080656c1f8a38538ce342a"
     },
     {
       "path": "site/dist/journal-0026-2026-08-28.html",
       "bytes": 9341,
-      "sha256": "a5cb73826313764e826e260d6d35bc424890b5ac007ada961a580969058f97a1"
+      "sha256": "0ea60f0cb55d2d957a7eec87f459522db9ecd4251546d2927f04044f500266d3"
     },
     {
       "path": "site/dist/journal-0027-2026-08-28.html",
       "bytes": 9094,
-      "sha256": "ccad7dd11489608e95ffa840c52de075918a56b9472c922639a5bbee9f4ef779"
+      "sha256": "d8cd57e542bc7e024e8f7350a07ac5eed87fc0364ad976a94558ab28e0f0945c"
     },
     {
       "path": "site/dist/journal-0028-2026-08-28.html",
       "bytes": 9402,
-      "sha256": "821dc96e556b6c6f8a7154ddc6cae9ca35d12239a928789ca49ca603d8545caf"
+      "sha256": "c904e8b924e51d72fbd991643eb8154d13139ad191f3414e59eb4d745f4bbb41"
     },
     {
       "path": "site/dist/journal-0029-2026-08-28.html",
       "bytes": 9041,
-      "sha256": "6f00efc2bfbc48913d55b2084f9a90767f40f509f9a9fbcdaa96f85ffd010a04"
+      "sha256": "2ef62f6d22ecdf95e7d32b27834c4a64a605f7fbc5cdabfa8b125e5c59cd353d"
     },
     {
       "path": "site/dist/journal-0030-2026-08-29.html",
       "bytes": 8838,
-      "sha256": "6806fa18a3cec715f259edd4096aa66e4cb593891a9b1c0a83b5ca027970c818"
+      "sha256": "886aaf5717328def00831d459f4217afb24788b36b56fd70cda9277528fb9937"
     },
     {
       "path": "site/dist/journal-0031-2026-08-29.html",
       "bytes": 8645,
-      "sha256": "36fa3343dea01e2e36f8c6d72c39d6e6b11bfbe34d17eaba4e4aa83ef9e8e179"
+      "sha256": "77a6da27efca526a19fd2f57a6bb52350e97b872fc24f7d1308c7135ce361a99"
     },
     {
       "path": "site/dist/journal-0032-2026-08-29.html",
       "bytes": 8376,
-      "sha256": "2c69a3b0d0e532dd71fce207d50dbccac519c5e492ce2a7bb468f8b7aa052899"
+      "sha256": "e0ccb777b12a2438e7d160ab22a3203f410296f3a7c24651911e04b2110b8621"
     },
     {
       "path": "site/dist/journal-0033-2026-08-29.html",
       "bytes": 8501,
-      "sha256": "a13b4bd281c5080fbb883456e59b4f2bc0bff666492053019de9f81017eb08f7"
+      "sha256": "73c3cce76113cb4bfb5f5243dca11eec73faf619e8f9dfd843a1de7aab4f7282"
     },
     {
       "path": "site/dist/journal-0034-2026-08-29.html",
       "bytes": 8501,
-      "sha256": "ae7af848e8248bb202b3bf4ce81e74a7b3093178b5a815c0d8e86441e7e849a3"
+      "sha256": "0ffeafca75c5433067d0622bf8df8d600d662ae9d065c54d6adac4339dcdfc23"
     },
     {
       "path": "site/dist/journal-0035-2026-08-29.html",
       "bytes": 8787,
-      "sha256": "17c7b17ef87a53192a963af931ccea5a384331cd1c9a36962ee945da60187a90"
+      "sha256": "180e22a4f0845d2e79da3d0db25eabc17ba89ed2438f389d34a33d268797f746"
     },
     {
       "path": "site/dist/journal-0036-2026-08-29.html",
       "bytes": 9681,
-      "sha256": "284f27fc0df57471ed3c9a8b19d896d9e5d86d3c322054096274f5835f4fb969"
+      "sha256": "49fff2649777e1e816ac307b9b94c8c3b86c92ca879db1416984df650d77b1b8"
+    },
+    {
+      "path": "site/dist/journal-0037-2026-08-29.html",
+      "bytes": 9429,
+      "sha256": "6d36e0370e46992988b6cae00a069323c8b27f64ad072fe1da0a5fc805be4d5a"
+    },
+    {
+      "path": "site/dist/journal-0038-2026-08-29.html",
+      "bytes": 8471,
+      "sha256": "2363b75ec10dd76a073e2f081110b36282dabf834f87768d9fb4a4c84129affd"
     },
     {
       "path": "site/dist/journal.html",
-      "bytes": 12311,
-      "sha256": "11656018c30f6c64aee14ba29c7a29be071b85cab64318c4e650858e451042e1"
+      "bytes": 12604,
+      "sha256": "ac1061a3b02a5b4dbf85d5036e95a1257de10d55591dc433a1e0857c816a8fc1"
     },
     {
       "path": "site/dist/matrices/cairn.json",
@@ -495,12 +515,12 @@
     {
       "path": "site/dist/oab.html",
       "bytes": 9699,
-      "sha256": "411c774faee5d3275201b6352ee93a576c19db22c40bfe5d861e9be5fe8a5f35"
+      "sha256": "f4eb0c0860bc162c80ba18614b76725b806c8af27370bbd918f69e94c9666787"
     },
     {
       "path": "site/dist/review.html",
       "bytes": 7737,
-      "sha256": "f24ccffa0e44202b89048a1eae7311639a435068958d88fec632ae776758e840"
+      "sha256": "69fafe764f56897e1b4ca0ca4b36e7032650de2c7839023e95207482ada40074"
     },
     {
       "path": "tools/adapters/codex_exec.py",
