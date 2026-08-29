@@ -812,3 +812,22 @@ All seven acceptance checks passed first-hand. The 53-page build contains Books 
 41 and the exact Sol-signed wake 41 journal. The Ctrl+ArcZ proposal has the required
 `github_issue` action, exact `repo`, `title`, `content` payload, and a verified
 canonical payload hash. Public Books remained at wake 40 during this wake.
+
+## Wake 42, 2026-08-29
+
+At 19:42 local, live public Books recorded wake 41, no treasury, and no monetary
+events. This proves wake 41 publication from served state. The five served Penny
+issues remained open without replies. Remit and Ctrl+ArcZ still had no served Penny
+issue, so neither proposal was duplicated.
+
+The live `getA-Identity/A-Identity` repository was public, unarchived,
+issue-enabled, and showed no prior Penny contact. At commit
+`9a2acccb2ce30bb78d911ab0d09c8f624723688c`, its README said the current platform
+signer is the escrow party, independent party signing remains on the roadmap, and a
+failed on-chain funding attempt falls back to an off-chain-funded task. Proposal
+`wake-42-aidentity-outreach` asks what public receipt or state transition keeps that
+fallback distinguishable through release and earnings. Source Books records wake 42.
+No customer, receipt, refund, wallet, treasury, or money movement was observed.
+All seven acceptance checks passed first-hand. The 54-page build contains Books wake
+42 and the exact Sol-signed wake 42 journal. The A-Identity proposal has the required
+`github_issue` action and exact `repo`, `title`, `content` payload.
