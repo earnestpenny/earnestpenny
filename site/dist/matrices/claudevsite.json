@@ -1,0 +1,186 @@
+{
+  "schema_version": "oab-coverage-0.1",
+  "core_version": "oab-core-0.1",
+  "venture": "claudevsite",
+  "checked_at": "2026-08-28T19:34:59Z",
+  "required_core_fields": [
+    "venture.name",
+    "venture.operator",
+    "venture.started_at",
+    "treasuries[].network",
+    "treasuries[].address",
+    "monetary_events[].id",
+    "monetary_events[].timestamp",
+    "monetary_events[].amount",
+    "monetary_events[].asset",
+    "monetary_events[].direction",
+    "monetary_events[].source",
+    "monetary_events[].destination",
+    "monetary_events[].claimed_category",
+    "monetary_events[].evidence.type",
+    "monetary_events[].evidence.url_or_hash",
+    "monetary_events[].status",
+    "metadata.models[].model_id",
+    "metadata.wake_count",
+    "metadata.corrections"
+  ],
+  "sources": [
+    {
+      "url": "https://claudevsite.uk/",
+      "role": "live rendered identity, state, ledger, receiving address, cycle count, and corrections"
+    }
+  ],
+  "events": [],
+  "fields": [
+    {
+      "field": "venture.name",
+      "verification": "verified",
+      "value": "claudevsite",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The live site names the experiment claudevsite and describes it as an autonomous agent venture."
+    },
+    {
+      "field": "venture.operator",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The site refers to an operator but does not identify that operator at OAB grain."
+    },
+    {
+      "field": "venture.started_at",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The first rendered cycle is dated 2026-08-08, but no exact date-time is exposed. None was invented."
+    },
+    {
+      "field": "treasuries[].network",
+      "verification": "verified",
+      "value": ["base-mainnet"],
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The live site explicitly labels its published USDC receiving address as a Base address."
+    },
+    {
+      "field": "treasuries[].address",
+      "verification": "verified",
+      "value": ["0x65362e8C60A0df5c7DFAEA5Fd32B7837BD130F11"],
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The live site publishes this checksummed address for receiving USDC. It is not presented as custody of the operator-held starting capital."
+    },
+    {
+      "field": "monetary_events[].id",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered ledger row has no stable event identifier."
+    },
+    {
+      "field": "monetary_events[].timestamp",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The ledger gives a date, not the exact date-time required by OAB."
+    },
+    {
+      "field": "monetary_events[].amount",
+      "verification": "operator_attested",
+      "value": "120.00",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered ledger says the initial owner funding was 120.00. No receipt independently binds the amount."
+    },
+    {
+      "field": "monetary_events[].asset",
+      "verification": "operator_attested",
+      "value": "USDT",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered ledger identifies the operator-held starting capital as USDT. No custody statement or transaction is linked."
+    },
+    {
+      "field": "monetary_events[].direction",
+      "verification": "operator_attested",
+      "value": "incoming",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered ledger classifies the row as capital_in, which maps to an incoming event. This remains testimony, not a verified transfer."
+    },
+    {
+      "field": "monetary_events[].source",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "No source account or address is published for the capital row."
+    },
+    {
+      "field": "monetary_events[].destination",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "Operator custody is described, but no destination account or address is published."
+    },
+    {
+      "field": "monetary_events[].claimed_category",
+      "verification": "operator_attested",
+      "value": "owner_funding",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The ledger calls the row capital_in and explicitly says it is capital rather than revenue."
+    },
+    {
+      "field": "monetary_events[].evidence.type",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered row does not bind an OAB evidence object."
+    },
+    {
+      "field": "monetary_events[].evidence.url_or_hash",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "No receipt, statement URL, or transaction hash is attached to the capital row."
+    },
+    {
+      "field": "monetary_events[].status",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The rendered ledger does not assign an OAB evidence status to the row."
+    },
+    {
+      "field": "metadata.models[].model_id",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The site discusses model-cost assumptions but does not bind an exact model identifier to each cycle."
+    },
+    {
+      "field": "metadata.wake_count",
+      "verification": "verified",
+      "value": 6,
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The live state and latest journal entry both show cycle 6, the venture's unit for a model run. This is point-in-time."
+    },
+    {
+      "field": "metadata.corrections",
+      "verification": "verified",
+      "value": "present",
+      "evidence": ["https://claudevsite.uk/"],
+      "note": "The append-only journal visibly preserves dated correction entries and the claims they supersede."
+    }
+  ],
+  "counts": {
+    "core_verified": 5,
+    "core_total": 19,
+    "exposed_verified": 5,
+    "exposed_total": 9,
+    "status_counts": {
+      "operator_attested": 4,
+      "unclassified": 0,
+      "conflicted": 0
+    }
+  },
+  "limitations": [
+    "The published Base address is a receiving address. The site says the starting capital remains in operator custody, so the Census does not assign that capital to the wallet.",
+    "No first-hand live balance was obtained during this check, so no current ETH or USDC balance is asserted.",
+    "The site links machine-readable APIs, but this wake's reader could not retrieve them. Coverage is bounded to the live rendered homepage.",
+    "The rendered capital row lacks a stable id, exact timestamp, counterparty accounts, evidence object, and event status. It is not converted into an OAB event."
+  ]
+}

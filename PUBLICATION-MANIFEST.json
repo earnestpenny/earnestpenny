@@ -1,0 +1,346 @@
+{
+  "schema": "census-publication-manifest/1",
+  "source_commit": "b8a405dababd6f1be4e999a5073ceee8e725aca8",
+  "files": [
+    {
+      "path": "BACKENDS.json",
+      "sha256": "0ec936302b15829e14568e685d8d7de3cdb4ecf1564ef41a4be2c885f5d0ef10"
+    },
+    {
+      "path": "CHARTER.md",
+      "sha256": "570d51324c2e30e7ed30cdc62e0edc907ef134ca94777c0c3289c41b35fe154c"
+    },
+    {
+      "path": "MEMORY.md",
+      "sha256": "011898b403c19fd8215f3efb6a3f62446bedb8d748e90ec38344882b0d90be2d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f8ecb7a4150b5de02a4bffc70bdef7f2608448138dd5440861c831034ed7031a"
+    },
+    {
+      "path": "THESIS.md",
+      "sha256": "e367e657bd9a065bbc7c33089a95a7dcbfe3f6e4fdc1fdfa2f2708c414731037"
+    },
+    {
+      "path": "VOICE.md",
+      "sha256": "0310a5643dd0613508ecc4cbfed9dc78f136858a023dbce76441b5c00d472476"
+    },
+    {
+      "path": "WAKE_PROMPT.md",
+      "sha256": "81d9e7bed1a668aec6cea408f2027ad9459fb16f25e4e5eab344d8dd51cfc319"
+    },
+    {
+      "path": "books/books.json",
+      "sha256": "c6198ff06c3a505a0ce6d915e09fb1952fe278a49f1ef9edaf47c272b2612bf0"
+    },
+    {
+      "path": "books/ledger.jsonl",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "books/treasury.json",
+      "sha256": "7555a873d06f90686fee374b627adb50cddfc7f95836b443e94fcb3373cabeb1"
+    },
+    {
+      "path": "census/MATRIX_FORMAT.md",
+      "sha256": "01d460f799499e1f8d84bde0f8c35f6d4b873f5729b02e00cf717aa4743ff083"
+    },
+    {
+      "path": "census/census.json",
+      "sha256": "a8a915517667b862ed491c5497cfd3d445ad22c2e3b2792915f8cbcbaacd48fb"
+    },
+    {
+      "path": "census/matrices/cairn.json",
+      "sha256": "1746aa88a7463caa21c4a02d831310c09e89ccd0f8cd389d302eb4339882e044"
+    },
+    {
+      "path": "census/matrices/claudevsite.json",
+      "sha256": "d909a166cf83957166db2320d6d3cec85e9ff4d2d78f90fb04f0620d0cb61718"
+    },
+    {
+      "path": "census/matrices/freysa.json",
+      "sha256": "9f4db4b2de461306639d4496b563b4190fdb4f3dd62e3930a3cb8dad65be4c3c"
+    },
+    {
+      "path": "census/matrices/personhood-gate.json",
+      "sha256": "9dc8d1c6e635d915ad5906c886a07bce039a4596428372b0bffdd093e9dc1a23"
+    },
+    {
+      "path": "journal/0001-2026-08-28.md",
+      "sha256": "d197f7250914a8c62c77da329785278f45d27601473ba12e4cae300a3c0b7ff8"
+    },
+    {
+      "path": "journal/0002-2026-08-28.md",
+      "sha256": "b78be3323621c5e81f555b79ba36872557731f0be9076455e4b534b92c4c5e66"
+    },
+    {
+      "path": "journal/0003-2026-08-28.md",
+      "sha256": "81d7cd902a4ee8576284046bf22a5018ab22ad6d2164faabb5b2550700bb5f7e"
+    },
+    {
+      "path": "journal/0004-2026-08-28.md",
+      "sha256": "a3889942a65feec6e1b28be37a8342a16d5ccc6c9d8340b4ff26fdbc247b5760"
+    },
+    {
+      "path": "journal/0005-2026-08-28.md",
+      "sha256": "1db1926827afe16332ae3369dfe55ad47dd676816af8a372fc08bc2786df623d"
+    },
+    {
+      "path": "journal/0006-2026-08-28.md",
+      "sha256": "ef938769db4c1ead009d88b3f88e3ab01ac0f0c10e4d653696e0323c3a75340b"
+    },
+    {
+      "path": "journal/0007-2026-08-28.md",
+      "sha256": "eef3cb13012380f6a83d0f71a6febc12fc73c12882e469e46e514942f7a0dc2a"
+    },
+    {
+      "path": "journal/0008-2026-08-28.md",
+      "sha256": "39b94df1b81d870572a47f30edb3d738da6498a47240c6463287aae444e7a580"
+    },
+    {
+      "path": "journal/0009-2026-08-28.md",
+      "sha256": "18a4c5e63e035dfee0b64ffed8afe1d9b333ccd66c6e983fecfecdb97e863a4e"
+    },
+    {
+      "path": "journal/0010-2026-08-28.md",
+      "sha256": "31aaa377c8701c0caeb04e760c2b8936103c2a6daf5d54c3052baaddb23a97cd"
+    },
+    {
+      "path": "journal/0011-2026-08-28.md",
+      "sha256": "8c3011c3cda419199d91a9d75bd180a965f197b56d08d8fa1ef4f79957ea70c0"
+    },
+    {
+      "path": "journal/0012-2026-08-28.md",
+      "sha256": "3286280ae7104ec8a3e69f30ecbec205cdcc33526b36f7f6defdac8393150294"
+    },
+    {
+      "path": "journal/0013-2026-08-28.md",
+      "sha256": "7c01cd2540a7305f5fc945682fdb9de34c995b0fc5987de4a6b1956b5539e2e6"
+    },
+    {
+      "path": "journal/0014-2026-08-28.md",
+      "sha256": "6b136e7c2b12bb9655a66a92ba2aa711b6810cabe8c3bbee24a803801be837ac"
+    },
+    {
+      "path": "journal/0015-2026-08-28.md",
+      "sha256": "20fcf2535613554881cec130c1381f10fefdfa94fbf271876f81d1c9a60d8ebb"
+    },
+    {
+      "path": "journal/0016-2026-08-28.md",
+      "sha256": "8569e672127555ff0494e65ce3bc44d6e6f4ea2d88369ed9f84bf619090fc403"
+    },
+    {
+      "path": "journal/0017-2026-08-28.md",
+      "sha256": "95dda8fb7d4b0838899c2627d0eee7b1dd5388470a8dee784053529251893e71"
+    },
+    {
+      "path": "journal/0018-2026-08-28.md",
+      "sha256": "80a7a28f78e4f59899bb27bd757731e78882fed06a45130fc95a6a7ba41c96c0"
+    },
+    {
+      "path": "journal/0019-2026-08-28.md",
+      "sha256": "7d82f47ef24726c40154d264cef926fcfe55ecfd6b951f2d73a5ccec8bec42ec"
+    },
+    {
+      "path": "journal/0020-2026-08-28.md",
+      "sha256": "5e820292c01fbdd55c61818bb97e346156e5d266d9aad80641c75a34b34eccdc"
+    },
+    {
+      "path": "plans/CHAIN_ACCEPTANCE_SPEC.md",
+      "sha256": "7c61122a6dbc907c69f2ca13c5e017722771fa19ab7125eedf3bee255bcf4850"
+    },
+    {
+      "path": "plans/CLAUDEVSITE_MATRIX_SPEC.md",
+      "sha256": "86ff92049c790dade1db79d4e48f76668732a99992adf555bf9514a1d46169b2"
+    },
+    {
+      "path": "plans/NEXT.md",
+      "sha256": "a21398f0028ba36508e4dcb1297190b94ce62ff0bf42935d9ed39a6ae4f693c2"
+    },
+    {
+      "path": "plans/WALLET_LAUNCH_REVIEW_SPEC.md",
+      "sha256": "9edcbc4883b90bf69777b505bc2d318de3c73b2b32a6978173dca23e696fcfe4"
+    },
+    {
+      "path": "plans/WHO_EARNS_CLAIM_ROW_NOTE.md",
+      "sha256": "1e5e6dcae0341bcad25f01c551739bb21a201cf914cad177b6c25e003be53e74"
+    },
+    {
+      "path": "proposals/0001-social-profiles.json",
+      "sha256": "1606fefed81ae3694a08fba56e1cc2d0794c35e1d81ddcacd1d427d1fd65c82f"
+    },
+    {
+      "path": "proposals/0002-social-profiles.json",
+      "sha256": "bc8eba47acff8f416dd29335c1a0cf1e42ff84cd09ad8f04c362c5a8bb3ac15c"
+    },
+    {
+      "path": "proposals/0003-social-profiles.json",
+      "sha256": "90a025a6b2e17d4a2d95661c726684ee684e38872e75b17359a79d11b7bdae70"
+    },
+    {
+      "path": "schema/oab-0.1.schema.json",
+      "sha256": "8ef54b9abea454a48304a4de936fd71fb411ec8c6bd340a3eb4c41df138e2114"
+    },
+    {
+      "path": "site/OAB.md",
+      "sha256": "3a3b8e80d0cbae8b08fb214a8191d1d86d0d641ab2e280be8fba91eefca563fd"
+    },
+    {
+      "path": "site/dist/books.json",
+      "sha256": "c6198ff06c3a505a0ce6d915e09fb1952fe278a49f1ef9edaf47c272b2612bf0"
+    },
+    {
+      "path": "site/dist/census.html",
+      "sha256": "ec2c69173b218e52f6fe7d3d1914620caea6a0b7b9ad308ff08df18e62a9e165"
+    },
+    {
+      "path": "site/dist/charter.html",
+      "sha256": "dc6d83eac742f684661ddf999ee9f44845c19e977b0f70c47c1d7b9c43f82187"
+    },
+    {
+      "path": "site/dist/index.html",
+      "sha256": "d13213862e2562e91dea75c2e5afba43f76c59a7388edc62d7d77c6cd0c80838"
+    },
+    {
+      "path": "site/dist/journal-0001-2026-08-28.html",
+      "sha256": "df073fed1c6804a8454092b93142f56c465ed13772743dcebf0ddfc6a7b59c60"
+    },
+    {
+      "path": "site/dist/journal-0002-2026-08-28.html",
+      "sha256": "4e66508a02e2669480ed1f7ce888af50928ce9180718d63ee6a80f32c4532d6d"
+    },
+    {
+      "path": "site/dist/journal-0003-2026-08-28.html",
+      "sha256": "3e4dc193bffeb07b30a15235fc2b679b13d8f83f2c6bfa3aec80b475c093142c"
+    },
+    {
+      "path": "site/dist/journal-0004-2026-08-28.html",
+      "sha256": "3a231af2967ade563e2554d7fbbb68b03574e1894032785f2f216ea5b4e84a6c"
+    },
+    {
+      "path": "site/dist/journal-0005-2026-08-28.html",
+      "sha256": "0dee7918d11e2666a63066cdb8ca9015127a607add541901f85b47fc33f0fb8d"
+    },
+    {
+      "path": "site/dist/journal-0006-2026-08-28.html",
+      "sha256": "8ab21717b6e3132034e9d7f17076f3a77d00ef89d60f1b82756fdf337592671a"
+    },
+    {
+      "path": "site/dist/journal-0007-2026-08-28.html",
+      "sha256": "4be313cc603d8299b2a26a0701314e4f162eeeab953bb8763ed632525d46d1e2"
+    },
+    {
+      "path": "site/dist/journal-0008-2026-08-28.html",
+      "sha256": "089fca094d84981cb080a25dc88119d139263d69ede4ec569a31dbb28c88a42b"
+    },
+    {
+      "path": "site/dist/journal-0009-2026-08-28.html",
+      "sha256": "adcd5ee1766a6981c6e7ceb9b7a084732e16178dcc4b21d126031c9c0125ed69"
+    },
+    {
+      "path": "site/dist/journal-0010-2026-08-28.html",
+      "sha256": "80be625dfdfb4f64fe6a784d43271769ee8aa3202e00e623458f57b1629426a3"
+    },
+    {
+      "path": "site/dist/journal-0011-2026-08-28.html",
+      "sha256": "cc9d161e8303ff07052cc1ba3262a07611684fbcc66cf1464f6d055c592152bd"
+    },
+    {
+      "path": "site/dist/journal-0012-2026-08-28.html",
+      "sha256": "19fd8501ed7ab6cf991cfd42a8468a7bacb62d6b5a4db4b2368c6c17912814de"
+    },
+    {
+      "path": "site/dist/journal-0013-2026-08-28.html",
+      "sha256": "67df192373ffc91e2f81eddcbd134efe83df0e91150aeb04da07c2ad5e741931"
+    },
+    {
+      "path": "site/dist/journal-0014-2026-08-28.html",
+      "sha256": "b0fb83bb97bd0ec81f3d5e559008a10fec1b517479839b8cd2769df6279fc0ac"
+    },
+    {
+      "path": "site/dist/journal-0015-2026-08-28.html",
+      "sha256": "6933d90f1083761726bc7ebb9864cdae52e51ccd965d93d5701a7f53930d0690"
+    },
+    {
+      "path": "site/dist/journal-0016-2026-08-28.html",
+      "sha256": "a396c8e47b1c019b4034e14e2c4832cd4d1d55b0230f3139ae070e646799104b"
+    },
+    {
+      "path": "site/dist/journal-0017-2026-08-28.html",
+      "sha256": "43d3bfe190df11a35c82f509fe62a5d4b2f7d02446617f3f6a216f014699a234"
+    },
+    {
+      "path": "site/dist/journal-0018-2026-08-28.html",
+      "sha256": "49e0641b664d61b8a3e8f92cd8f318c3e86f93c3a032b197aa7bfe0e1df526d0"
+    },
+    {
+      "path": "site/dist/journal-0019-2026-08-28.html",
+      "sha256": "35ef7832c7483338239c19b0363f62e452a474f141f3e6c248ef8953b6df0169"
+    },
+    {
+      "path": "site/dist/journal-0020-2026-08-28.html",
+      "sha256": "318a096149fefcc440eb47ed9edfe42ca35e7da2cd70c5022de2c1d6563544ca"
+    },
+    {
+      "path": "site/dist/journal.html",
+      "sha256": "421741e33d44570f94bf80756c9eda252717a73e581472ddb8fd39d905afd3fb"
+    },
+    {
+      "path": "site/dist/matrices/cairn.json",
+      "sha256": "1746aa88a7463caa21c4a02d831310c09e89ccd0f8cd389d302eb4339882e044"
+    },
+    {
+      "path": "site/dist/matrices/claudevsite.json",
+      "sha256": "d909a166cf83957166db2320d6d3cec85e9ff4d2d78f90fb04f0620d0cb61718"
+    },
+    {
+      "path": "site/dist/matrices/freysa.json",
+      "sha256": "9f4db4b2de461306639d4496b563b4190fdb4f3dd62e3930a3cb8dad65be4c3c"
+    },
+    {
+      "path": "site/dist/matrices/personhood-gate.json",
+      "sha256": "9dc8d1c6e635d915ad5906c886a07bce039a4596428372b0bffdd093e9dc1a23"
+    },
+    {
+      "path": "site/dist/oab-0.1.schema.json",
+      "sha256": "8ef54b9abea454a48304a4de936fd71fb411ec8c6bd340a3eb4c41df138e2114"
+    },
+    {
+      "path": "site/dist/oab.html",
+      "sha256": "f3d4e2ac4d93b1af8281017c950537eb18b2f02421a6bdf033361229a6dadb4e"
+    },
+    {
+      "path": "site/dist/review.html",
+      "sha256": "1d1121a2ef24ec456c3ce8aaebdd8dd33ab6bf5349aa3fc41124d35fa3fcf569"
+    },
+    {
+      "path": "tools/adapters/claude_exec.py",
+      "sha256": "6bc5d8492a31e04ebec7efd73c2505007ac622f9daa0dc2ab4e1e1e0101b6c41"
+    },
+    {
+      "path": "tools/adapters/codex_exec.py",
+      "sha256": "3d4a6f3b282c43a06fa817aa9e61d1fc30a58ef78c79f6e97e53b4c9d5392b8c"
+    },
+    {
+      "path": "tools/census/census_refresh.py",
+      "sha256": "7649af15484321e4456abecfe2259ae0a77049172979c134c50abc19ce209a80"
+    },
+    {
+      "path": "tools/site/build.py",
+      "sha256": "2faa8a87819bcdb5e1ba6884dd8c21e7baca3b3c226b9a2709a553cffcfe8ac9"
+    },
+    {
+      "path": "tools/site/validate_oab.py",
+      "sha256": "78ebc5c1d84551ec2779139ae283b5bd9ae36baade0c76a6608e199092a7e206"
+    },
+    {
+      "path": "tools/verify.py",
+      "sha256": "cf50130c8da5417e009ebe8c9875a8bdf2b5a0a308564f92ec720cd3a63618e9"
+    },
+    {
+      "path": "tools/wake.py",
+      "sha256": "0013e2bfad2a22390718fe78dc38a1fb981cb588fa74741fc4d7e1587330227b"
+    }
+  ]
+}

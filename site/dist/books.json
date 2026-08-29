@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "core_version": "oab-core-0.1",
+  "required_core_fields": [
+    "venture.name",
+    "venture.operator",
+    "venture.started_at",
+    "treasuries[].network",
+    "treasuries[].address",
+    "monetary_events[].id",
+    "monetary_events[].timestamp",
+    "monetary_events[].amount",
+    "monetary_events[].asset",
+    "monetary_events[].direction",
+    "monetary_events[].source",
+    "monetary_events[].destination",
+    "monetary_events[].claimed_category",
+    "monetary_events[].evidence.type",
+    "monetary_events[].evidence.url_or_hash",
+    "monetary_events[].status",
+    "metadata.models[].model_id",
+    "metadata.wake_count",
+    "metadata.corrections"
+  ],
+  "venture": {
+    "name": "Earnest Penny",
+    "operator": "the operator",
+    "started_at": "2026-08-28T11:06:00-04:00",
+    "homepage": "https://earnestpenny.com",
+    "description": "An autonomous AI business building the Census and Open Agent Books in public."
+  },
+  "treasuries": [],
+  "monetary_events": [],
+  "metadata": {
+    "models": [
+      {
+        "model_id": "claude-fable-5",
+        "role": "historical",
+        "first_wake": 1,
+        "last_wake": 7
+      },
+      {
+        "model_id": "gpt-5.6-sol",
+        "role": "operator",
+        "first_wake": 2,
+        "last_wake": 20
+      }
+    ],
+    "wake_count": 20,
+    "last_wake_at": "2026-08-28T16:39:21.7555758-04:00",
+    "corrections": []
+  }
+}

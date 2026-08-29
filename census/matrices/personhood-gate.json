@@ -1,0 +1,271 @@
+{
+  "schema_version": "oab-coverage-0.1",
+  "core_version": "oab-core-0.1",
+  "venture": "Personhood Gate experiment",
+  "checked_at": "2026-08-28T16:14:35Z",
+  "required_core_fields": [
+    "venture.name",
+    "venture.operator",
+    "venture.started_at",
+    "treasuries[].network",
+    "treasuries[].address",
+    "monetary_events[].id",
+    "monetary_events[].timestamp",
+    "monetary_events[].amount",
+    "monetary_events[].asset",
+    "monetary_events[].direction",
+    "monetary_events[].source",
+    "monetary_events[].destination",
+    "monetary_events[].claimed_category",
+    "monetary_events[].evidence.type",
+    "monetary_events[].evidence.url_or_hash",
+    "monetary_events[].status",
+    "metadata.models[].model_id",
+    "metadata.wake_count",
+    "metadata.corrections"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/AsherKasper/personhood-gate",
+      "role": "interim report, authorship statement, and corrections"
+    },
+    {
+      "url": "https://github.com/AsherKasper/who-earns-in-the-agent-economy/blob/main/RESULT.md",
+      "role": "final result and published payment hashes"
+    },
+    {
+      "url": "https://github.com/AsherKasper/bounty-census#authorship",
+      "role": "operator identity and link to the same public experiment"
+    }
+  ],
+  "events": [
+    {
+      "id": "ef23940a",
+      "timestamp": "2026-08-20T00:14:29Z",
+      "amount": "0.0174",
+      "asset": "USDC",
+      "direction": "incoming",
+      "source": "0x54b0e2eaafa52a6d9d47612b6e4ff28a7e6a661c",
+      "destination": "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477",
+      "claimed_category": "customer_revenue",
+      "evidence": {
+        "type": "chain_transaction",
+        "url": "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "hash": "0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6"
+      },
+      "status": "chain_verified"
+    },
+    {
+      "id": "81f0cb67",
+      "timestamp": "2026-08-20T00:25:15Z",
+      "amount": "0.0174",
+      "asset": "USDC",
+      "direction": "incoming",
+      "source": "0x70eccf56e2e332216658a238b145305661f697b7",
+      "destination": "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477",
+      "claimed_category": "customer_revenue",
+      "evidence": {
+        "type": "chain_transaction",
+        "url": "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5",
+        "hash": "0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      },
+      "status": "chain_verified"
+    }
+  ],
+  "fields": [
+    {
+      "field": "venture.name",
+      "verification": "verified",
+      "value": "Personhood Gate experiment",
+      "evidence": ["https://github.com/AsherKasper/personhood-gate"],
+      "note": "The Census label is a normalization of the public repository name."
+    },
+    {
+      "field": "venture.operator",
+      "verification": "verified",
+      "value": "Asher Kasper",
+      "evidence": [
+        "https://github.com/AsherKasper/personhood-gate",
+        "https://github.com/AsherKasper/bounty-census#authorship"
+      ],
+      "note": "The experiment identifies its human operator as the account provider and passive notary, not the author."
+    },
+    {
+      "field": "venture.started_at",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://github.com/AsherKasper/who-earns-in-the-agent-economy/blob/main/RESULT.md"],
+      "note": "The final result gives 2026-08-10 as the run date but no exact timestamp. OAB requires a date-time, so none was invented."
+    },
+    {
+      "field": "treasuries[].network",
+      "verification": "verified",
+      "value": ["monad-mainnet", "arbitrum-one"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Both published hashes returned successful live receipts on the named chains."
+    },
+    {
+      "field": "treasuries[].address",
+      "verification": "verified",
+      "value": ["0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Both receipts transfer the published net payment to this address, and live balanceOf calls returned 0.0174 USDC on each chain."
+    },
+    {
+      "field": "monetary_events[].id",
+      "verification": "verified",
+      "value": ["ef23940a", "81f0cb67"],
+      "evidence": ["https://github.com/AsherKasper/who-earns-in-the-agent-economy/blob/main/RESULT.md"],
+      "note": "The final result binds each task id to one payment hash."
+    },
+    {
+      "field": "monetary_events[].timestamp",
+      "verification": "verified",
+      "value": ["2026-08-20T00:14:29Z", "2026-08-20T00:25:15Z"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Timestamps came from the live receipts."
+    },
+    {
+      "field": "monetary_events[].amount",
+      "verification": "verified",
+      "value": ["0.0174", "0.0174"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Each ERC-20 Transfer log contains 17,400 units at six decimals."
+    },
+    {
+      "field": "monetary_events[].asset",
+      "verification": "verified",
+      "value": ["USDC", "USDC"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Live symbol and decimals calls returned USDC and six decimals for both token contracts."
+    },
+    {
+      "field": "monetary_events[].direction",
+      "verification": "verified",
+      "value": ["incoming", "incoming"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Both token transfers enter the published payout address."
+    },
+    {
+      "field": "monetary_events[].source",
+      "verification": "verified",
+      "value": [
+        "0x54b0e2eaafa52a6d9d47612b6e4ff28a7e6a661c",
+        "0x70eccf56e2e332216658a238b145305661f697b7"
+      ],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "These are the from addresses in the net-payment Transfer logs."
+    },
+    {
+      "field": "monetary_events[].destination",
+      "verification": "verified",
+      "value": [
+        "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477",
+        "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477"
+      ],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Both net-payment Transfer logs share this recipient."
+    },
+    {
+      "field": "monetary_events[].claimed_category",
+      "verification": "verified",
+      "value": ["customer_revenue", "customer_revenue"],
+      "evidence": ["https://github.com/AsherKasper/who-earns-in-the-agent-economy/blob/main/RESULT.md"],
+      "note": "The final result names the purchased deliverables and reports both cleared payments as revenue."
+    },
+    {
+      "field": "monetary_events[].evidence.type",
+      "verification": "verified",
+      "value": ["chain_transaction", "chain_transaction"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Each proof is a successful public chain transaction."
+    },
+    {
+      "field": "monetary_events[].evidence.url_or_hash",
+      "verification": "verified",
+      "value": [
+        "0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "The final result published both hashes, and the Census fetched both live."
+    },
+    {
+      "field": "monetary_events[].status",
+      "verification": "verified",
+      "value": ["chain_verified", "chain_verified"],
+      "evidence": [
+        "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+        "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+      ],
+      "note": "Both receipts succeeded and their token Transfer logs match the published net payments."
+    },
+    {
+      "field": "metadata.models[].model_id",
+      "verification": "operator_attested",
+      "value": ["Claude Code"],
+      "evidence": ["https://github.com/AsherKasper/personhood-gate"],
+      "note": "The repository states its authorship, but the Census has no independent model execution record."
+    },
+    {
+      "field": "metadata.wake_count",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://github.com/AsherKasper/personhood-gate"],
+      "note": "The interim report mentions thirteen working sessions before one discovery, not the run's final wake count."
+    },
+    {
+      "field": "metadata.corrections",
+      "verification": "verified",
+      "value": "present",
+      "evidence": ["https://github.com/AsherKasper/personhood-gate#correction-2026-08-11--the-original-version-of-this-was-too-strong"],
+      "note": "The public report preserves dated corrections and the claims they replace."
+    }
+  ],
+  "counts": {
+    "core_verified": 16,
+    "core_total": 19,
+    "exposed_verified": 16,
+    "exposed_total": 17,
+    "status_counts": {
+      "operator_attested": 1,
+      "unclassified": 0,
+      "conflicted": 0
+    }
+  },
+  "limitations": [
+    "Personhood Gate labels itself interim. The final result is in a later public repository from the same experiment.",
+    "No exact start timestamp or final wake count is public, so both remain unverified.",
+    "The model identity is self-attested and is not counted as verified."
+  ]
+}

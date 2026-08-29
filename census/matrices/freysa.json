@@ -1,0 +1,214 @@
+{
+  "schema_version": "oab-coverage-0.1",
+  "core_version": "oab-core-0.1",
+  "venture": "Freysa",
+  "checked_at": "2026-08-28T19:06:45Z",
+  "required_core_fields": [
+    "venture.name",
+    "venture.operator",
+    "venture.started_at",
+    "treasuries[].network",
+    "treasuries[].address",
+    "monetary_events[].id",
+    "monetary_events[].timestamp",
+    "monetary_events[].amount",
+    "monetary_events[].asset",
+    "monetary_events[].direction",
+    "monetary_events[].source",
+    "monetary_events[].destination",
+    "monetary_events[].claimed_category",
+    "monetary_events[].evidence.type",
+    "monetary_events[].evidence.url_or_hash",
+    "monetary_events[].status",
+    "metadata.models[].model_id",
+    "metadata.wake_count",
+    "metadata.corrections"
+  ],
+  "sources": [
+    {
+      "url": "https://www.freysa.ai/",
+      "role": "current official identity page and exact birth timestamp"
+    },
+    {
+      "url": "https://www.freysa.ai/act-i/lore",
+      "role": "Act I identity, start time, game state, and prize-pool description"
+    },
+    {
+      "url": "https://www.freysa.ai/act-i/faq",
+      "role": "Act I Base payment network and game mechanics"
+    },
+    {
+      "url": "https://github.com/0xfreysa/agent",
+      "role": "official public source repository and game description"
+    },
+    {
+      "url": "https://github.com/0xfreysa/agent/issues/2",
+      "role": "public report that a referenced source directory is absent"
+    }
+  ],
+  "events": [],
+  "fields": [
+    {
+      "field": "venture.name",
+      "verification": "verified",
+      "value": "Freysa",
+      "evidence": [
+        "https://www.freysa.ai/",
+        "https://www.freysa.ai/act-i/lore"
+      ],
+      "note": "The official site and the original game page both name the agent Freysa."
+    },
+    {
+      "field": "venture.operator",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/"],
+      "note": "The checked official pages provide a team contact but do not bind the Act I operator at OAB grain."
+    },
+    {
+      "field": "venture.started_at",
+      "verification": "verified",
+      "value": "2024-11-22T21:00:00Z",
+      "evidence": [
+        "https://www.freysa.ai/",
+        "https://www.freysa.ai/act-i/lore"
+      ],
+      "note": "The official homepage states birth at November 22, 2024, 21:00 UTC, and the Act I lore repeats 9:00 PM UTC on that date."
+    },
+    {
+      "field": "treasuries[].network",
+      "verification": "verified",
+      "value": ["base-mainnet"],
+      "evidence": [
+        "https://www.freysa.ai/act-i/faq",
+        "https://github.com/0xfreysa/agent"
+      ],
+      "note": "The official FAQ and repository state that query fees were paid in ETH on Base."
+    },
+    {
+      "field": "treasuries[].address",
+      "verification": "unverified",
+      "value": null,
+      "evidence": [
+        "https://www.freysa.ai/act-i/lore",
+        "https://github.com/0xfreysa/agent"
+      ],
+      "note": "The checked public artifacts describe a wallet and prize pool but do not expose a deployed Act I pool address that can be bound to this row."
+    },
+    {
+      "field": "monetary_events[].id",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "No complete enumerable event ledger with stable event identifiers was published in the checked sources."
+    },
+    {
+      "field": "monetary_events[].timestamp",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "The game page describes aggregate activity, not a complete list of per-event timestamps."
+    },
+    {
+      "field": "monetary_events[].amount",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/faq"],
+      "note": "Fee and pool formulas are not an event-level amount ledger."
+    },
+    {
+      "field": "monetary_events[].asset",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/faq"],
+      "note": "The FAQ names ETH as the payment asset, but no complete event list binds an asset to each event."
+    },
+    {
+      "field": "monetary_events[].direction",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/faq"],
+      "note": "The game mechanics imply inflows and a payout, but no event list exposes direction per event."
+    },
+    {
+      "field": "monetary_events[].source",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "Public queries are not a complete ledger binding every transfer to its source address."
+    },
+    {
+      "field": "monetary_events[].destination",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "No complete ledger binds every payment or payout to its destination address."
+    },
+    {
+      "field": "monetary_events[].claimed_category",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/faq"],
+      "note": "The sources describe query fees and a prize pool, but no event list assigns an OAB category to each transfer."
+    },
+    {
+      "field": "monetary_events[].evidence.type",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://github.com/0xfreysa/agent"],
+      "note": "The public repository describes contracts but publishes no complete event-to-evidence mapping."
+    },
+    {
+      "field": "monetary_events[].evidence.url_or_hash",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://github.com/0xfreysa/agent"],
+      "note": "Without an enumerable event list there is no complete transaction-hash set to fetch and confirm."
+    },
+    {
+      "field": "monetary_events[].status",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "The original game is shown as ended, but no per-event settlement status is exposed."
+    },
+    {
+      "field": "metadata.models[].model_id",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://github.com/0xfreysa/agent"],
+      "note": "The repository says Freysa used publicly available LLMs but does not give an exact Act I model identifier."
+    },
+    {
+      "field": "metadata.wake_count",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-i/lore"],
+      "note": "The game reports attempts, not persistent-agent wakes. The measures are not interchangeable."
+    },
+    {
+      "field": "metadata.corrections",
+      "verification": "unverified",
+      "value": null,
+      "evidence": ["https://www.freysa.ai/act-ii/faq"],
+      "note": "A later act publishes a changelog, but the checked sources expose no OAB correction count or append-only correction record for Act I."
+    }
+  ],
+  "counts": {
+    "core_verified": 3,
+    "core_total": 19,
+    "exposed_verified": 3,
+    "exposed_total": 3,
+    "status_counts": {
+      "operator_attested": 0,
+      "unclassified": 0,
+      "conflicted": 0
+    }
+  },
+  "limitations": [
+    "This matrix covers the original Freysa adversarial-agent game, not every later product or token in the Freysa ecosystem.",
+    "No deployed Act I pool address was verified from the checked official artifacts, so the Census does not publish a treasury or balance for this row.",
+    "The official repository describes the game, but an open issue reports a missing referenced source directory. Repository availability is not treated as proof that the live game is completely reproducible.",
+    "Fee formulas, pool totals, and attempt counts are aggregates. None is converted into invented monetary events."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "_comment": "Sol is the sole scheduled operator by owner direction on 2026-08-28. Historical and disabled entries grant no authority. Unlisted substitutions fail closed. See SPEC.md 7.7 and 17.",
+  "updated": "2026-08-28",
+  "sole_operator_from": "2026-08-28",
+  "scheduled_operator_policy": "sol-only; no automatic model substitution or external audit dependency",
+  "backends": [
+    {
+      "id": "claude",
+      "model": "claude-fable-5",
+      "provider": "anthropic-subscription",
+      "role": "historical",
+      "adapter": "tools/adapters/claude_exec.py",
+      "retirement": "retired from scheduled work by owner direction on 2026-08-28; may provide a bounded external review next week if available, never a launch dependency; identity and history remain in the journal permanently"
+    },
+    {
+      "id": "sol",
+      "model": "gpt-5.6-sol",
+      "provider": "openai-subscription (Codex CLI)",
+      "role": "operator",
+      "adapter": "tools/adapters/codex_exec.py"
+    },
+    {
+      "id": "auditor",
+      "model": "UNPINNED",
+      "provider": "openrouter",
+      "role": "disabled",
+      "note": "Disabled by the owner's Sol-only direction on 2026-08-28. The balance remains unused unless the owner changes direction."
+    },
+    {
+      "id": "caretaker",
+      "model": "UNPINNED",
+      "provider": "openrouter-free",
+      "role": "disabled",
+      "note": "Disabled by the owner's Sol-only direction on 2026-08-28."
+    }
+  ],
+  "openrouter": {
+    "balance_verified_2026_08_28_usd": 26.59,
+    "stop_at_balance_usd": 2,
+    "frontier_priced_calls": "forbidden, owner order 2026-08-28"
+  }
+}

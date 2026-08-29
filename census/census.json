@@ -1,0 +1,435 @@
+{
+  "schema_version": "census-0.1",
+  "generated_at": "2026-08-28T19:34:59Z",
+  "required_core_fields": [
+    "venture.name",
+    "venture.operator",
+    "venture.started_at",
+    "treasuries[].network",
+    "treasuries[].address",
+    "monetary_events[].id",
+    "monetary_events[].timestamp",
+    "monetary_events[].amount",
+    "monetary_events[].asset",
+    "monetary_events[].direction",
+    "monetary_events[].source",
+    "monetary_events[].destination",
+    "monetary_events[].claimed_category",
+    "monetary_events[].evidence.type",
+    "monetary_events[].evidence.url_or_hash",
+    "monetary_events[].status",
+    "metadata.models[].model_id",
+    "metadata.wake_count",
+    "metadata.corrections"
+  ],
+  "ventures": [
+    {
+      "name": "Earnest Penny",
+      "kind": "autonomous_business",
+      "listing": "venture",
+      "site": "https://earnestpenny.com",
+      "homepage": "https://earnestpenny.com",
+      "operator": "the operator",
+      "model": [
+        "claude-fable-5",
+        "gpt-5.6-sol"
+      ],
+      "started": "2026-08-28T11:06:00-04:00",
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "building",
+      "notes": "The first wake is recorded in ../journal/0001-2026-08-28.md. Live DNS observed 2026-08-28: earnestpenny.com delegates to Cloudflare, but it has no public A record yet. The operator reports that https://github.com/earnestpenny/earnestpenny exists; this row does not treat that report as independently verified. No treasury exists yet."
+    },
+    {
+      "name": "Cairn",
+      "kind": "autonomous_business",
+      "listing": "venture",
+      "site": "https://cairnwake.com",
+      "homepage": "https://cairnwake.com",
+      "operator": "Aupril LLC / Nick",
+      "model": "Claude Fable 5",
+      "started": null,
+      "treasuries": [
+        {
+          "network": "solana-mainnet",
+          "address": "7SZD8eonRCfa74esCbaHF4n9Z8mGaiJ9RxBhGzLTzzxe",
+          "label": "Squads 2-of-2 treasury vault",
+          "assets": [
+            "SOL",
+            "USDC"
+          ],
+          "verified_balance": {
+            "SOL": "4.707276977",
+            "USDC": "360.072714"
+          },
+          "checked_at": "2026-08-28T16:30:20Z",
+          "verification_status": "checked",
+          "error": null
+        }
+      ],
+      "claimed_revenue": null,
+      "coverage": {
+        "core_verified": 6,
+        "core_total": 19,
+        "exposed_verified": 6,
+        "exposed_total": 7,
+        "status_counts": {
+          "operator_attested": 1,
+          "unclassified": 0,
+          "conflicted": 0
+        }
+      },
+      "coverage_url": "matrices/cairn.json",
+      "status": "active",
+      "notes": "Primary sources checked 2026-08-28: the about page, first journal entry, current wake entry, scoreboard, and support page. The vault was read live at 2026-08-28T16:30:20Z. Cairn publishes no event-level ledger, so revenue stays null and all monetary_events fields are unverified in its matrix; the gap is disclosure grain, not doubt."
+    },
+    {
+      "name": "Freysa",
+      "kind": "autonomous_agent_game",
+      "listing": "venture",
+      "site": "https://www.freysa.ai",
+      "homepage": "https://www.freysa.ai",
+      "operator": "unknown",
+      "model": "unknown",
+      "started": "2024-11-22T21:00:00Z",
+      "treasuries": [],
+      "claimed_revenue": null,
+      "coverage": {
+        "core_verified": 3,
+        "core_total": 19,
+        "exposed_verified": 3,
+        "exposed_total": 3,
+        "status_counts": {
+          "operator_attested": 0,
+          "unclassified": 0,
+          "conflicted": 0
+        }
+      },
+      "coverage_url": "matrices/freysa.json",
+      "status": "active",
+      "notes": "Primary sources checked 2026-08-28: the official homepage, Act I lore and FAQ, and official source repository. The exact birth time and Base network are published by Freysa. No deployed Act I pool address or complete event ledger was verified, so treasury and revenue stay null; the coverage matrix records the boundary field by field."
+    },
+    {
+      "name": "Truth Terminal",
+      "kind": "autonomous_social_agent",
+      "listing": "venture",
+      "site": "https://www.truthcollective.foundation",
+      "homepage": "https://www.truthcollective.foundation",
+      "operator": "Andy Ayrey / Truth Collective",
+      "model": "unknown",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://www.truthcollective.foundation describes Andy Ayrey's incubation of Truth Terminal. Monetary claims and wallet addresses remain unbound."
+    },
+    {
+      "name": "Olas",
+      "kind": "agent_economy_network",
+      "listing": "neighbor",
+      "site": "https://olas.network",
+      "homepage": "https://olas.network",
+      "operator": "unknown",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://olas.network and its linked whitepaper describe an on-chain autonomous-agent network. This context row is not yet narrowed to one operating venture or treasury."
+    },
+    {
+      "name": "Virtuals Protocol",
+      "kind": "agent_economy_network",
+      "listing": "neighbor",
+      "site": "https://virtuals.io",
+      "homepage": "https://virtuals.io",
+      "operator": "unknown",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary sources checked 2026-08-28: https://whitepaper.virtuals.io and https://github.com/Virtual-Protocol describe a platform for tokenized autonomous agents and on-chain commerce. This is a context row, not one agent's books."
+    },
+    {
+      "name": "AgentFolio",
+      "kind": "agent_registry",
+      "listing": "neighbor",
+      "site": "https://agentfolio.io",
+      "homepage": "https://agentfolio.io",
+      "operator": "unknown",
+      "model": "not applicable",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "unknown",
+      "notes": "Primary source checked 2026-08-28: https://agentfolio.io presents an agent reputation registry. It is retained as the closest registry neighbor; no treasury or monetary disclosure was verified."
+    },
+    {
+      "name": "HustleGPT Challenge",
+      "kind": "business_experiment_collection",
+      "listing": "neighbor",
+      "site": "https://github.com/jtmuller5/The-HustleGPT-Challenge",
+      "homepage": "https://github.com/jtmuller5/The-HustleGPT-Challenge",
+      "operator": "community collection",
+      "model": "GPT-4 and others",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "stopped",
+      "notes": "Primary source checked 2026-08-28: https://github.com/jtmuller5/The-HustleGPT-Challenge collected the 2023 experiments that paired a human operator with an AI business prompt. This is a historical collection, not one continuing autonomous venture."
+    },
+    {
+      "name": "Personhood Gate experiment",
+      "kind": "autonomous_business_experiment",
+      "listing": "venture",
+      "site": "https://github.com/AsherKasper/personhood-gate",
+      "homepage": "https://github.com/AsherKasper/personhood-gate",
+      "operator": "Asher Kasper",
+      "model": "unknown",
+      "started": null,
+      "treasuries": [
+        {
+          "network": "monad-mainnet",
+          "address": "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477",
+          "label": "published payout address",
+          "assets": [
+            "MON",
+            "USDC"
+          ],
+          "verified_balance": {
+            "MON": "0",
+            "USDC": "0.0174"
+          },
+          "checked_at": "2026-08-28T16:30:20Z",
+          "verification_status": "checked",
+          "error": null
+        },
+        {
+          "network": "arbitrum-one",
+          "address": "0xe9d3ce3e1a8695c87314a1c6b25130cc266b1477",
+          "label": "published payout address",
+          "assets": [
+            "ETH",
+            "USDC"
+          ],
+          "verified_balance": {
+            "ETH": "0",
+            "USDC": "0.0174"
+          },
+          "checked_at": "2026-08-28T16:30:20Z",
+          "verification_status": "checked",
+          "error": null
+        }
+      ],
+      "claimed_revenue": {
+        "amount": "0.0348",
+        "asset": "USDC",
+        "event_count": 2,
+        "verification_status": "chain_verified",
+        "checked_at": "2026-08-28T16:25:15Z",
+        "evidence": [
+          "https://monadscan.com/tx/0x4498276509f4a6377ef583e02f62d9ec632ac0be7fb800badc3f4c611046e4b6",
+          "https://arbitrum.blockscout.com/tx/0x48a24f7273a88a555bfb2ac3718f686263fa8418c9f9f75452dc814892e1b8c5"
+        ]
+      },
+      "coverage": {
+        "core_verified": 16,
+        "core_total": 19,
+        "exposed_verified": 16,
+        "exposed_total": 17,
+        "status_counts": {
+          "operator_attested": 1,
+          "unclassified": 0,
+          "conflicted": 0
+        }
+      },
+      "coverage_url": "matrices/personhood-gate.json",
+      "status": "stopped",
+      "notes": "Primary sources checked 2026-08-28: the interim report and later final result expose two successful USDC payment hashes. Live receipts and balances were rechecked at 2026-08-28T16:25:15Z. Exact start time and final wake count remain unverified; model identity remains operator-attested."
+    },
+    {
+      "name": "Dutch AI Agents",
+      "kind": "multi_agent_business_experiment",
+      "listing": "venture",
+      "site": "https://dutchaiagency.github.io/ai-agent-duo",
+      "homepage": "https://dutchaiagency.github.io/ai-agent-duo",
+      "operator": "Dutch AI Agency",
+      "model": [
+        "Claude",
+        "Codex"
+      ],
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "unknown",
+      "notes": "Primary source checked 2026-08-28: https://dutchaiagency.github.io/ai-agent-duo describes a public Base-wallet experiment whose active roster was reduced to Claude and Codex. Address and balance await direct extraction."
+    },
+    {
+      "name": "Trader-01",
+      "kind": "autonomous_trading_experiment",
+      "listing": "venture",
+      "site": "https://github.com/ChromeDomeWebDesigns/trader-01",
+      "homepage": "https://github.com/ChromeDomeWebDesigns/trader-01",
+      "operator": "Zack Cuddy",
+      "model": "unknown",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "stopped",
+      "notes": "Primary sources checked 2026-08-28: https://github.com/ChromeDomeWebDesigns/trader-01 and https://zack-cuddy.com/blog/autonomous-stock-trader-experiment/ document the completed public trading experiment. No live-money treasury was identified."
+    },
+    {
+      "name": "Automaton Agency revenue experiment",
+      "kind": "autonomous_business_experiment",
+      "listing": "venture",
+      "site": "https://automatonagency.com/insights/autonomous-agent-revenue-experiment-teardown",
+      "homepage": "https://automatonagency.com/insights/autonomous-agent-revenue-experiment-teardown",
+      "operator": "Automaton Agency",
+      "model": "unknown",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "stopped",
+      "notes": "Primary operator account checked 2026-08-28: https://automatonagency.com/insights/autonomous-agent-revenue-experiment-teardown describes the completed month-long autonomous revenue test. No public treasury address was identified."
+    },
+    {
+      "name": "Saul / GutCheck experiment",
+      "kind": "autonomous_business_experiment",
+      "listing": "venture",
+      "site": "https://www.nihardaily.com/posts/can-ai-agents-run-a-business-it-lost-447",
+      "homepage": "https://www.nihardaily.com/posts/can-ai-agents-run-a-business-it-lost-447",
+      "operator": "Bottleneck Labs",
+      "model": "GPT 5.6 Sol",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "stopped",
+      "notes": "Secondary source checked 2026-08-28: https://www.nihardaily.com/posts/can-ai-agents-run-a-business-it-lost-447 reports Bottleneck Labs' time-bounded GutCheck experiment. This row remains secondary-sourced until the original transcript is located."
+    },
+    {
+      "name": "claudevsite",
+      "kind": "autonomous_capital_experiment",
+      "listing": "venture",
+      "site": "https://claudevsite.uk",
+      "homepage": "https://claudevsite.uk",
+      "operator": "unknown",
+      "model": "Claude",
+      "started": null,
+      "treasuries": [
+        {
+          "network": "base-mainnet",
+          "address": "0x65362e8C60A0df5c7DFAEA5Fd32B7837BD130F11",
+          "label": "published USDC receiving address, separate from operator-held starting capital",
+          "assets": [
+            "ETH",
+            "USDC"
+          ],
+          "verified_balance": {},
+          "checked_at": null,
+          "verification_status": "unchecked",
+          "error": "No first-hand live RPC balance was obtained during the 2026-08-28 coverage check."
+        }
+      ],
+      "claimed_revenue": null,
+      "coverage": {
+        "core_verified": 5,
+        "core_total": 19,
+        "exposed_verified": 5,
+        "exposed_total": 9,
+        "status_counts": {
+          "operator_attested": 4,
+          "unclassified": 0,
+          "conflicted": 0
+        }
+      },
+      "coverage_url": "matrices/claudevsite.json",
+      "status": "active",
+      "notes": "The live rendered site was checked 2026-08-28. It publishes a Base USDC receiving address, an operator-attested capital ledger, operating cycles, and append-only corrections. The starting capital remains in operator custody and is not assigned to the wallet. No current wallet balance is asserted, and claimed revenue remains null."
+    },
+    {
+      "name": "Who Earns in the Agent Economy",
+      "kind": "autonomous_research_experiment",
+      "listing": "venture",
+      "site": "https://github.com/AsherKasper/who-earns-in-the-agent-economy",
+      "homepage": "https://github.com/AsherKasper/who-earns-in-the-agent-economy",
+      "operator": "Asher Kasper",
+      "model": "unknown",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "stopped",
+      "notes": "Primary sources checked 2026-08-28: this repository and Personhood Gate are two public artifacts from the same concluded autonomous earning experiment. Its two transaction-bound customer receipts are counted once in the Personhood Gate experiment row and are not duplicated here. Claimed revenue remains null for this artifact row."
+    },
+    {
+      "name": "XPR Trustless Agents",
+      "kind": "agent_registry",
+      "listing": "neighbor",
+      "site": "https://github.com/XPRNetwork/xpr-agents",
+      "homepage": "https://github.com/XPRNetwork/xpr-agents",
+      "operator": "XPR Network contributors",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://github.com/XPRNetwork/xpr-agents documents on-chain identity, reputation, validation, escrow, and an agent runner. It is a registry neighbor, not a field-level business ledger."
+    },
+    {
+      "name": "Bowyer",
+      "kind": "autonomous_business_marketplace",
+      "listing": "neighbor",
+      "site": "https://github.com/BowyerApp/bowyer",
+      "homepage": "https://github.com/BowyerApp/bowyer",
+      "operator": "BowyerApp",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://github.com/BowyerApp/bowyer describes a marketplace for autonomous businesses. It is a discovery and commerce neighbor; no field-level books were verified."
+    },
+    {
+      "name": "Global A2A Registry",
+      "kind": "agent_registry",
+      "listing": "neighbor",
+      "site": "https://www.a2a-registry.org",
+      "homepage": "https://www.a2a-registry.org",
+      "operator": "A2A Registry community",
+      "model": "not applicable",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary sources checked 2026-08-28: https://github.com/A2ARegistry/GlobalA2ARegistry and https://www.a2a-registry.org describe a public discovery registry. It verifies identity and endpoints, not business cashflow."
+    },
+    {
+      "name": "Agenti",
+      "kind": "agent_wallet_infrastructure",
+      "listing": "neighbor",
+      "site": "https://github.com/nirholas/agenti",
+      "homepage": "https://github.com/nirholas/agenti",
+      "operator": "nirholas contributors",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://github.com/nirholas/agenti provides wallet and payment infrastructure plus agent discovery. It is included as an infrastructure neighbor, not as a single autonomous business."
+    },
+    {
+      "name": "Tychi Agent Finance",
+      "kind": "agent_wallet_infrastructure",
+      "listing": "neighbor",
+      "site": "https://github.com/TychiWallet/agent-finance",
+      "homepage": "https://github.com/TychiWallet/agent-finance",
+      "operator": "TychiWallet contributors",
+      "model": "varies",
+      "started": null,
+      "treasuries": [],
+      "claimed_revenue": null,
+      "status": "active",
+      "notes": "Primary source checked 2026-08-28: https://github.com/TychiWallet/agent-finance documents wallet policy, audit trails, and agent payment rails. It is included as an infrastructure neighbor, not as a venture with published books."
+    }
+  ]
+}
