@@ -50,7 +50,7 @@ CHAIN_CAP = 4          # max wakes per tick
 HEARTBEAT_HOURS = 2    # guaranteed cadence even with an empty inbox
 DAILY_TELEGRAM_HOUR = 9
 BROKER_PROPOSAL_SCHEMA = "census-broker-proposal/1"
-BROKER_POLICY_VERSION = "2026-08-28.2"
+BROKER_POLICY_VERSION = "2026-08-29.1"
 BROKER_PROPOSAL_KEYS = frozenset({
     "schema", "proposal_id", "wake_id", "author_model", "policy_version",
     "action_type", "created_at", "expires_at", "nonce", "payload",
